@@ -1,0 +1,4446 @@
+Job <45353795> is submitted to queue <s>.
+Sender: LSF System <lsfadmin@cb040>
+Subject: Job 45353795: <basf2 -l error Bs_2tau_mc.py> in cluster <centralcluster> Exited
+
+Job <basf2 -l error Bs_2tau_mc.py> was submitted from host <cw02> by user <matrk> in cluster <centralcluster> at Mon Apr 21 20:20:06 2025
+Job was executed on host(s) <cb040>, in queue <s>, as user <matrk> in cluster <centralcluster> at Mon Apr 21 20:20:07 2025
+</home/belle2/matrk> was used as the home directory.
+</gpfs/home/belle2/matrk/B_tautau/run_Bs> was used as the working directory.
+Started at Mon Apr 21 20:20:07 2025
+Terminated at Mon Apr 21 20:20:07 2025
+Results reported at Mon Apr 21 20:20:07 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+basf2 -l error Bs_2tau_mc.py
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   0.01 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   1 sec.
+    Turnaround time :                            1 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <error.log> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@cb047>
+Subject: Job 45354140: <basf2 -l error Bs_2tau_mc.py> in cluster <centralcluster> Exited
+
+Job <basf2 -l error Bs_2tau_mc.py> was submitted from host <cw02> by user <matrk> in cluster <centralcluster> at Mon Apr 21 20:21:00 2025
+Job was executed on host(s) <cb047>, in queue <s>, as user <matrk> in cluster <centralcluster> at Mon Apr 21 20:21:01 2025
+</home/belle2/matrk> was used as the home directory.
+</gpfs/home/belle2/matrk/B_tautau/run_Bs> was used as the working directory.
+Started at Mon Apr 21 20:21:01 2025
+Terminated at Mon Apr 21 20:21:01 2025
+Results reported at Mon Apr 21 20:21:01 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+basf2 -l error Bs_2tau_mc.py
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   0.02 sec.
+    Max Memory :                                 1 MB
+    Average Memory :                             0.33 MB
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               3999.00 MB
+    Max Swap :                                   -
+    Max Processes :                              1
+    Max Threads :                                1
+    Run time :                                   1 sec.
+    Turnaround time :                            1 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <error.log> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@cb047>
+Subject: Job 45354769: <basf2 -l error Bs_2tau_mc.py> in cluster <centralcluster> Exited
+
+Job <basf2 -l error Bs_2tau_mc.py> was submitted from host <cw07> by user <matrk> in cluster <centralcluster> at Mon Apr 21 20:22:40 2025
+Job was executed on host(s) <cb047>, in queue <s>, as user <matrk> in cluster <centralcluster> at Mon Apr 21 20:22:41 2025
+</home/belle2/matrk> was used as the home directory.
+</gpfs/home/belle2/matrk/B_tautau/run_Bs> was used as the working directory.
+Started at Mon Apr 21 20:22:41 2025
+Terminated at Mon Apr 21 20:22:41 2025
+Results reported at Mon Apr 21 20:22:41 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+basf2 -l error Bs_2tau_mc.py
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   0.02 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   1 sec.
+    Turnaround time :                            1 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <error.log> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@cb040>
+Subject: Job 45361648: <basf2 -l error Bs_2tau_mc.py> in cluster <centralcluster> Done
+
+Job <basf2 -l error Bs_2tau_mc.py> was submitted from host <cw07> by user <matrk> in cluster <centralcluster> at Mon Apr 21 20:32:00 2025
+Job was executed on host(s) <cb040>, in queue <s>, as user <matrk> in cluster <centralcluster> at Mon Apr 21 20:32:01 2025
+</home/belle2/matrk> was used as the home directory.
+</home/belle2/matrk/B_tautau/run_Bs> was used as the working directory.
+Started at Mon Apr 21 20:32:01 2025
+Terminated at Mon Apr 21 20:37:27 2025
+Results reported at Mon Apr 21 20:37:27 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+basf2 -l error Bs_2tau_mc.py
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   308.70 sec.
+    Max Memory :                                 424 MB
+    Average Memory :                             399.21 MB
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               3576.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   326 sec.
+    Turnaround time :                            327 sec.
+
+The output (if any) follows:
+
+[INFO] Steering file: Bs_2tau_mc.py
+[AnalysisConfiguration -> B2BIIMdstInput -> B2BIIFixMdst(? <=0[] ) -> B2BIIConvertMdst -> AnalysisConfiguration -> ParticleLoader_pi+:alle -> PListCopy_pi+:alle -> ParticleSelector_applyCuts_pi+:alle -> ParticleLoader_K+:alle -> PListCopy_K+:alle -> ParticleSelector_applyCuts_K+:alle -> MCMatcherParticles -> MCMatcherParticles -> PListCopy_pi0:alle -> ParticleCopier -> PListCopy_K_S0:alle -> ParticleCopier -> PListCopy_K_L0:alle -> ParticleSelector_applyCuts_K_L0:alle -> VariableToReturnValue(? <1[] ) -> ParticleSelector_applyCuts_K_S0:alle -> ParticleSelector_applyCuts_pi0:alle -> ParticleVertexFitter_pi0:alle -> ParticleVertexFitter_K_S0:alle -> ParticleCombiner_D_s+:1 -> K+:alle K-:alle pi+:alle -> PListCopy_D_s+:alle -> MCMatcherParticles -> ParticleVertexFitter_D_s+:alle -> ParticleCombiner_B_s0:1 -> D_s+:alle pi-:alle -> PListCopy_B_s0:alle -> MCMatcherParticles -> VariableToReturnValue(? <1[] ) -> ParticleLoader_e+:alle -> PListCopy_e+:alle -> ParticleSelector_applyCuts_e+:alle -> ParticleLoader_mu+:alle -> PListCopy_mu+:alle -> ParticleSelector_applyCuts_mu+:alle -> ParticleCombiner_rho+:1 -> pi+:alle pi0:alle -> PListCopy_rho+:alle -> ParticleCombiner_tau+:0 -> e+:alle -> ParticleCombiner_tau+:1 -> mu+:alle -> ParticleCombiner_tau+:2 -> pi+:alle -> ParticleCombiner_tau+:3 -> rho+:alle -> ParticleCombiner_tau+:4 -> pi+:alle pi+:alle pi-:alle -> PListCopy_tau+:alle -> ParticleCombiner_B_s0:tautau -> tau+:alle tau-:alle -> ParticleCombiner_Upsilon(5S):alle -> B_s0:alle B_s0:tautau -> VariableToReturnValue(? <1[] ) -> PListCopy_gamma:alle -> ParticleCopier -> ParticleSelector_applyCuts_gamma:alle -> VariablesToNtuple_Upsilon(5S):alle]
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+[eid::init_data] init_data(): files_dir is set to /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid.
+[eid::InitFiles] Reading the constants from /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid/
+[eid::InitFiles] ExpMC = 2 ( 1:data, 2:MC ), Exp# = 53, Run# = 1
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 53).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 67).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 69).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+[eid::SetSourceAuto] Belle_version SVD=1 CDC=1 ECL=1 (expno = 71).
+[eid::SetSourceAuto] eid selects to use constants from FILES.
+eid> constants from 
+DBASE
+constants is NOT ready!
+      ratio_pi ratio_k  ratio_p
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+      0 0 0
+eid> constants from 
+FILES
+ located in /cvmfs/belle.cern.ch/el9/externals/v02-00-02b/share/belle_legacy/data-files/eid
+ is ready!
+      ratio_pi ratio_k  ratio_p
+      23.143 1.735 0.121
+      16.34 2.743 0.159
+      14.029 2.642 0.251
+      10.993 2.187 0.428
+      8.218 1.918 0.444
+      6.271 1.796 0.419
+      4.714 1.474 0.385
+      3.52 1.203 0.408
+      2.487 0.984 0.261
+      3.261 1.443 0.468
+======================================================================================================================
+Name                                                       |      Calls | Memory(MB) |    Time(s) |     Time(ms)/Call
+======================================================================================================================
+AnalysisConfiguration                                      |     199981 |          0 |       0.54 |    0.00 +-   0.00
+B2BIIMdstInput                                             |     199981 |         25 |      42.73 |    0.21 +-   1.74
+B2BIIFixMdst                                               |     199980 |          0 |      16.98 |    0.08 +-   0.04
+B2BIIConvertMdst                                           |     184445 |         13 |     116.21 |    0.63 +-   0.32
+AnalysisConfiguration                                      |     184445 |          0 |       0.52 |    0.00 +-   0.00
+ParticleLoader_pi+:alle                                    |     184445 |          0 |       7.25 |    0.04 +-   0.01
+PListCopy_pi+:alle                                         |     184445 |          0 |       1.34 |    0.01 +-   0.00
+ParticleSelector_applyCuts_pi+:alle                        |     184445 |          0 |       3.37 |    0.02 +-   0.00
+ParticleLoader_K+:alle                                     |     184445 |          0 |       6.18 |    0.03 +-   0.01
+PListCopy_K+:alle                                          |     184445 |          0 |       1.05 |    0.01 +-   0.00
+ParticleSelector_applyCuts_K+:alle                         |     184445 |         -0 |       3.54 |    0.02 +-   0.01
+MCMatcherParticles                                         |     184445 |          0 |       3.90 |    0.02 +-   0.00
+MCMatcherParticles                                         |     184445 |          0 |       1.03 |    0.01 +-   0.00
+PListCopy_pi0:alle                                         |     184445 |          0 |       1.60 |    0.01 +-   0.00
+ParticleCopier                                             |     184445 |          1 |      39.34 |    0.21 +-   0.17
+PListCopy_K_S0:alle                                        |     184445 |          0 |       0.72 |    0.00 +-   0.00
+ParticleCopier                                             |     184445 |          1 |       3.01 |    0.02 +-   0.02
+PListCopy_K_L0:alle                                        |     184445 |          0 |       0.62 |    0.00 +-   0.00
+ParticleSelector_applyCuts_K_L0:alle                       |     184445 |          0 |       0.78 |    0.00 +-   0.00
+VariableToReturnValue                                      |     184445 |          0 |       0.72 |    0.00 +-   0.00
+ParticleSelector_applyCuts_K_S0:alle                       |     140104 |          0 |       0.74 |    0.01 +-   0.00
+ParticleSelector_applyCuts_pi0:alle                        |     140104 |          0 |       0.88 |    0.01 +-   0.00
+ParticleVertexFitter_pi0:alle                              |     140104 |          1 |       9.49 |    0.07 +-   0.07
+ParticleVertexFitter_K_S0:alle                             |     140104 |          0 |       0.64 |    0.00 +-   0.01
+ParticleCombiner_D_s+:1 -> K+:alle K-:alle pi+:alle        |     140104 |          0 |       1.25 |    0.01 +-   0.00
+PListCopy_D_s+:alle                                        |     140104 |          0 |       0.54 |    0.00 +-   0.00
+MCMatcherParticles                                         |     140104 |          0 |       0.88 |    0.01 +-   0.00
+ParticleVertexFitter_D_s+:alle                             |     140104 |          1 |      15.13 |    0.11 +-   0.13
+ParticleCombiner_B_s0:1 -> D_s+:alle pi-:alle              |     140104 |          0 |       0.78 |    0.01 +-   0.00
+PListCopy_B_s0:alle                                        |     140104 |          0 |       0.53 |    0.00 +-   0.00
+MCMatcherParticles                                         |     140104 |          0 |       0.77 |    0.01 +-   0.00
+VariableToReturnValue                                      |     140104 |          1 |       4.94 |    0.04 +-   0.00
+ParticleLoader_e+:alle                                     |          0 |          0 |       0.00 |    0.00 +-   0.00
+PListCopy_e+:alle                                          |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleSelector_applyCuts_e+:alle                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleLoader_mu+:alle                                    |          0 |          0 |       0.00 |    0.00 +-   0.00
+PListCopy_mu+:alle                                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleSelector_applyCuts_mu+:alle                        |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_rho+:1 -> pi+:alle pi0:alle               |          0 |          0 |       0.00 |    0.00 +-   0.00
+PListCopy_rho+:alle                                        |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_tau+:0 -> e+:alle                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_tau+:1 -> mu+:alle                        |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_tau+:2 -> pi+:alle                        |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_tau+:3 -> rho+:alle                       |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_tau+:4 -> pi+:alle pi+:alle pi-:alle      |          0 |          0 |       0.00 |    0.00 +-   0.00
+PListCopy_tau+:alle                                        |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_B_s0:tautau -> tau+:alle tau-:alle        |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCombiner_Upsilon(5S):alle -> B_s0:alle B_s0:tautau |          0 |          0 |       0.00 |    0.00 +-   0.00
+VariableToReturnValue                                      |          0 |          0 |       0.00 |    0.00 +-   0.00
+PListCopy_gamma:alle                                       |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleCopier                                             |          0 |          0 |       0.00 |    0.00 +-   0.00
+ParticleSelector_applyCuts_gamma:alle                      |          0 |          0 |       0.00 |    0.00 +-   0.00
+VariablesToNtuple_Upsilon(5S):alle                         |          0 |          0 |       0.00 |    0.00 +-   0.00
+======================================================================================================================
+Total                                                      |     199981 |         43 |     313.13 |    1.57 +-   1.87
+======================================================================================================================
+
+
+
+PS:
+
+Read file <error.log> for stderr output of this job.
+

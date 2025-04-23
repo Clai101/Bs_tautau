@@ -1,0 +1,8 @@
+root*/
+hist*/
+*.d
+*.root
+*.hist
+*.o
+myenv/
+scipy_extra/
