@@ -165,10 +165,15 @@ vm.addAlias('recM2', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)*
 vm.addAlias('idec0','daughter(1, daughter(0, extraInfo(decayModeID)))')
 vm.addAlias('idec1','daughter(1, daughter(1, extraInfo(decayModeID)))')
 vm.addAlias('is0', 'daughter(0, isSignal)')
+vm.addAlias('lost_nu', 'genNMissingDaughter(18)')
+vm.addAlias('lost_gamma', 'genNMissingDaughter(22)')
+vm.addAlias('lost_pi', 'genNMissingDaughter(211)')
+vm.addAlias('lost_K', 'genNMissingDaughter(321)')
+
 vm.addAlias('is1_lost_ph_0', 'formula(daughter(1, daughter(0, isSignalAcceptMissingNeutrino))*daughter(1, daughter(0, isSignalAcceptMissingNeutrino)))')
-vm.addAlias('is1_lost_ph_1_1', 'formula(daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * (daughter(1, daughter(1, genNMissingDaughter(18))) * daughter(1, daughter(1, genNMissingDaughter(22))) * passesCut(daughter(1, daughter(1, genNMissingDaughter(211))) == 0) * passesCut(daughter(1, daughter(1, genNMissingDaughter(321))) == 0)))')
-vm.addAlias('is1_lost_ph_1_0', 'formula((daughter(1, daughter(0, genNMissingDaughter(18))) * daughter(1, daughter(0, genNMissingDaughter(22))) * passesCut(daughter(1, daughter(0, genNMissingDaughter(211))) == 0) * passesCut(daughter(1, daughter(0, genNMissingDaughter(321))) == 0)) * daughter(1, daughter(1, isSignalAcceptMissingNeutrino)))')
-vm.addAlias('is1_lost_ph_2', 'formula((daughter(1, daughter(0, genNMissingDaughter(18))) * daughter(1, daughter(0, genNMissingDaughter(22))) * passesCut(daughter(1, daughter(0, genNMissingDaughter(211))) == 0) * passesCut(daughter(1, daughter(0, genNMissingDaughter(321))) == 0)) * (daughter(1, daughter(1, genNMissingDaughter(18))) * daughter(1, daughter(1, genNMissingDaughter(22))) * passesCut(daughter(1, daughter(1, genNMissingDaughter(211))) == 0) * passesCut(daughter(1, daughter(1, genNMissingDaughter(321))) == 0)))')
+vm.addAlias('is1_lost_ph_1_1', 'formula(daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * (daughter(1, daughter(1, lost_nu)) * daughter(1, daughter(1, lost_gamma)) * passesCut(daughter(1, daughter(1, lost_pi)) == 0) * passesCut(daughter(1, daughter(1, lost_K)) == 0)))')
+vm.addAlias('is1_lost_ph_1_0', 'formula((daughter(1, daughter(0, lost_nu)) * daughter(1, daughter(0, lost_gamma)) * passesCut(daughter(1, daughter(0, lost_pi)) == 0) * passesCut(daughter(1, daughter(0, lost_K)) == 0)) * daughter(1, daughter(1, isSignalAcceptMissingNeutrino)))')
+vm.addAlias('is1_lost_ph_2', 'formula((daughter(1, daughter(0, lost_nu)) * daughter(1, daughter(0, lost_gamma)) * passesCut(daughter(1, daughter(0, lost_pi)) == 0) * passesCut(daughter(1, daughter(0, lost_K)) == 0)) * (daughter(1, daughter(1, lost_nu)) * daughter(1, daughter(1, lost_gamma)) * passesCut(daughter(1, daughter(1, lost_pi)) == 0) * passesCut(daughter(1, daughter(1, lost_K)) == 0)))')
 
 vm.addAlias('is1', 'passesCut(formula(((is1_lost_ph_0 * passesCut(idec0 < 5) * passesCut(idec1 < 5)) + (is1_lost_ph_1_1 * passesCut(idec0 < 5) * passesCut(idec1 == 5)) + (is1_lost_ph_1_0 * passesCut(idec0 == 5) * passesCut(idec1 < 5)) + (is1_lost_ph_2 * passesCut(idec0 == 5) * passesCut(idec1 == 5)))) > 0 )')
 
