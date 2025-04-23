@@ -176,7 +176,7 @@ vm.addAlias('is1', 'passesCut(formula(((is1_lost_ph_0 * passesCut(idec0 < 5) * p
 
 
 # Ntuples
-variablesToNtuple('Upsilon(5S):full', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'is1'],
+variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'is1'],
                      treename='Y5S', filename='Bs_2tau_sig_MC.root', path=path)
 
 
