@@ -166,101 +166,22 @@ vm.addAlias('recM2', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)*
 vm.addAlias('idec0','daughter(1, daughter(0, decayModeID))')
 vm.addAlias('idec1','daughter(1, daughter(1, decayModeID))')
 vm.addAlias('is0', 'daughter(0, isSignal)')
-vm.addAlias('lost_nu', 'formula(passesCut(genNMissingDaughter(18) <= 2) * 1.0)')
-vm.addAlias('lost_gamma', 'formula(passesCut(genNMissingDaughter(22) <= 1) * 1.0)')
-vm.addAlias('lost_pi', 'formula(passesCut(genNMissingDaughter(211) == 0) * 1.0)')
-vm.addAlias('lost_K', 'formula(passesCut(genNMissingDaughter(321) == 0) * 1.0)')
-vm.addAlias(
-    'is1_lost_ph_0',
-    '''
-    formula(
-        (daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0)
-        * (daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0)
-    )
-    '''
-)
 
-vm.addAlias(
-    'is1_lost_ph_1_1',
-    '''
-    formula(
-        daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0
-        * (
-            daughter(1, daughter(1, lost_nu))
-            * daughter(1, daughter(1, lost_gamma))
-            * daughter(1, daughter(1, lost_pi))
-            * daughter(1, daughter(1, lost_K))
-        )
-    )
-    '''
-)
 
-vm.addAlias(
-    'is1_lost_ph_1_0',
-    '''
-    formula(
-        (
-            daughter(1, daughter(0, lost_nu))
-            * daughter(1, daughter(0, lost_gamma))
-            * daughter(1, daughter(0, lost_pi))
-            * daughter(1, daughter(0, lost_K))
-        )
-        * daughter(1, daughter(1, isSignalAcceptMissingNeutrino)) * 1.0
-    )
-    '''
-)
+vm.addAlias('lost_nu_0', 'daughter(1, daughter(0, genNMissingDaughter(18)))')
+vm.addAlias('lost_gamma_0', 'daughter(1, daughter(0, genNMissingDaughter(22)))')
+vm.addAlias('lost_pi_0', 'daughter(1, daughter(0, genNMissingDaughter(211)))')
+vm.addAlias('lost_K_0', 'daughter(1, daughter(0, genNMissingDaughter(321)))')
 
-vm.addAlias(
-    'is1_lost_ph_2',
-    '''
-    formula(
-        (
-            daughter(1, daughter(0, lost_nu))
-            * daughter(1, daughter(0, lost_gamma))
-            * daughter(1, daughter(0, lost_pi))
-            * daughter(1, daughter(0, lost_K))
-        )
-        * (
-            daughter(1, daughter(1, lost_nu))
-            * daughter(1, daughter(1, lost_gamma))
-            * daughter(1, daughter(1, lost_pi))
-            * daughter(1, daughter(1, lost_K))
-        )
-    )
-    '''
-)
+vm.addAlias('lost_nu_1', 'daughter(1, daughter(1, genNMissingDaughter(18)))')
+vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
+vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
+vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 
-vm.addAlias('is1', 
-    '''
-    passesCut(
-        formula(
-            (
-                is1_lost_ph_0 
-                * formula(passesCut(idec0 < 5) * 1.0) 
-                * formula(passesCut(idec1 < 5) * 1.0)
-            )
-            + (
-                is1_lost_ph_1_1 
-                * formula(passesCut(idec0 < 5) * 1.0) 
-                * formula(passesCut(idec1 == 5) * 1.0)
-            )
-            + (
-                is1_lost_ph_1_0 
-                * formula(passesCut(idec0 == 5) * 1.0) 
-                * formula(passesCut(idec1 < 5) * 1.0)
-            )
-            + (
-                is1_lost_ph_2 
-                * formula(passesCut(idec0 == 5) * 1.0) 
-                * formula(passesCut(idec1 == 5) * 1.0)
-            )
-        ) > 0
-    )
-    '''
-)
+
 
 # Ntuples
-variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'is1'],
+variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1'],
                      treename='Y5S', filename='Bs_2tau_sig_MC.root', path=path)
 
 #Process 1000 events
