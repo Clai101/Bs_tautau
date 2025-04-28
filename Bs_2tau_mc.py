@@ -233,31 +233,16 @@ vm.addAlias(
 vm.addAlias('is1', 
     '''
     passesCut(
-        formula(
-            (
-                is1_lost_ph_0 
-                * formula(passesCut(idec0 < 5) * 1.0) 
-                * formula(passesCut(idec1 < 5) * 1.0)
-            )
-            + (
-                is1_lost_ph_1_1 
-                * formula(passesCut(idec0 < 5) * 1.0) 
-                * formula(passesCut(idec1 == 5) * 1.0)
-            )
-            + (
-                is1_lost_ph_1_0 
-                * formula(passesCut(idec0 == 5) * 1.0) 
-                * formula(passesCut(idec1 < 5) * 1.0)
-            )
-            + (
-                is1_lost_ph_2 
-                * formula(passesCut(idec0 == 5) * 1.0) 
-                * formula(passesCut(idec1 == 5) * 1.0)
-            )
+        (
+            is1_lost_ph_0 * passesCut(idec0 < 5) * passesCut(idec1 < 5)
+            + is1_lost_ph_1_1 * passesCut(idec0 < 5) * passesCut(idec1 == 5)
+            + is1_lost_ph_1_0 * passesCut(idec0 == 5) * passesCut(idec1 < 5)
+            + is1_lost_ph_2 * passesCut(idec0 == 5) * passesCut(idec1 == 5)
         ) > 0
     )
     '''
 )
+
 
 # Ntuples
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'is1'],
