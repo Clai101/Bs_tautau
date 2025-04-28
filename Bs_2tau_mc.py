@@ -166,10 +166,10 @@ vm.addAlias('recM2', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)*
 vm.addAlias('idec0','daughter(1, daughter(0, extraInfo(decayModeID)))')
 vm.addAlias('idec1','daughter(1, daughter(1, extraInfo(decayModeID)))')
 vm.addAlias('is0', 'daughter(0, isSignal)')
-vm.addAlias('lost_nu', 'formula(genNMissingDaughter(18) <= 2)')
-vm.addAlias('lost_gamma', 'formula(genNMissingDaughter(22) <= 1)')
-vm.addAlias('lost_pi', 'formula(genNMissingDaughter(211) == 0)')
-vm.addAlias('lost_K', 'formula(genNMissingDaughter(321) == 0)')
+vm.addAlias('lost_nu', 'formula(passesCut(genNMissingDaughter(18) <= 2) * 1.0)')
+vm.addAlias('lost_gamma', 'formula(passesCut(genNMissingDaughter(22) <= 1) * 1.0)')
+vm.addAlias('lost_pi', 'formula(passesCut(genNMissingDaughter(211) == 0) * 1.0)')
+vm.addAlias('lost_K', 'formula(passesCut(genNMissingDaughter(321) == 0) *1.0)')
 vm.addAlias(
     'is1_lost_ph_0',
     '''
