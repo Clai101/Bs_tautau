@@ -1,0 +1,96 @@
+
+vm.addAlias('lost_nu', 'formula(passesCut(genNMissingDaughter(18) <= 2) * 1.0)')
+vm.addAlias('lost_gamma', 'formula(passesCut(genNMissingDaughter(22) <= 1) * 1.0)')
+vm.addAlias('lost_pi', 'formula(passesCut(genNMissingDaughter(211) == 0) * 1.0)')
+vm.addAlias('lost_K', 'formula(passesCut(genNMissingDaughter(321) == 0) * 1.0)')
+
+
+
+vm.addAlias(
+    'is1_lost_ph_0',
+    '''
+    formula(
+        (daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0)
+        * (daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0)
+    )
+    '''
+)
+
+vm.addAlias(
+    'is1_lost_ph_1_1',
+    '''
+    formula(
+        daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0
+        * (
+            daughter(1, daughter(1, lost_nu))
+            * daughter(1, daughter(1, lost_gamma))
+            * daughter(1, daughter(1, lost_pi))
+            * daughter(1, daughter(1, lost_K))
+        )
+    )
+    '''
+)
+
+vm.addAlias(
+    'is1_lost_ph_1_0',
+    '''
+    formula(
+        (
+            daughter(1, daughter(0, lost_nu))
+            * daughter(1, daughter(0, lost_gamma))
+            * daughter(1, daughter(0, lost_pi))
+            * daughter(1, daughter(0, lost_K))
+        )
+        * daughter(1, daughter(1, isSignalAcceptMissingNeutrino)) * 1.0
+    )
+    '''
+)
+
+vm.addAlias(
+    'is1_lost_ph_2',
+    '''
+    formula(
+        (
+            daughter(1, daughter(0, lost_nu))
+            * daughter(1, daughter(0, lost_gamma))
+            * daughter(1, daughter(0, lost_pi))
+            * daughter(1, daughter(0, lost_K))
+        )
+        * (
+            daughter(1, daughter(1, lost_nu))
+            * daughter(1, daughter(1, lost_gamma))
+            * daughter(1, daughter(1, lost_pi))
+            * daughter(1, daughter(1, lost_K))
+        )
+    )
+    '''
+)
+
+vm.addAlias('is1', 
+    '''
+    passesCut(
+        formula(
+            (
+                is1_lost_ph_0 
+                * formula(passesCut(idec0 < 5) * 1.0) 
+                * formula(passesCut(idec1 < 5) * 1.0)
+            )
+            + (
+                is1_lost_ph_1_1 
+                * formula(passesCut(idec0 < 5) * 1.0) 
+                * formula(passesCut(idec1 == 5) * 1.0)
+            )
+            + (
+                is1_lost_ph_1_0 
+                * formula(passesCut(idec0 == 5) * 1.0) 
+                * formula(passesCut(idec1 < 5) * 1.0)
+            )
+            + (
+                is1_lost_ph_2 
+                * formula(passesCut(idec0 == 5) * 1.0) 
+                * formula(passesCut(idec1 == 5) * 1.0)
+            )
+        ) > 0
+    )
+    '''
+)

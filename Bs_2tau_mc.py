@@ -163,8 +163,8 @@ vm.addAlias('missedE', 'formula(Ecms - useCMSFrame(E))')
 vm.addAlias('ecm','useCMSFrame(E)')
 
 vm.addAlias('recM2', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
-vm.addAlias('idec0','daughter(1, daughter(0, decayModeID))')
-vm.addAlias('idec1','daughter(1, daughter(1, decayModeID))')
+vm.addAlias('idec0', 'daughter(1, daughter(0, extraInfo(decayModeID)))')
+vm.addAlias('idec1', 'daughter(1, daughter(1, extraInfo(decayModeID)))')
 vm.addAlias('is0', 'daughter(0, isSignal)')
 
 
