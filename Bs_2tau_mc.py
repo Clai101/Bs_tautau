@@ -154,6 +154,7 @@ copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=pa
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
 
 from variables import variables as vm
+
 vm.addAlias('pcm','useCMSFrame(p)')
 vm.addAlias('p0','daughter(0,useCMSFrame(p))')
 vm.addAlias('M0','daughter(0,M)')
@@ -165,25 +166,75 @@ vm.addAlias('recM2', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)*
 vm.addAlias('idec0','daughter(1, daughter(0, extraInfo(decayModeID)))')
 vm.addAlias('idec1','daughter(1, daughter(1, extraInfo(decayModeID)))')
 vm.addAlias('is0', 'daughter(0, isSignal)')
-vm.addAlias('lost_nu', 'genNMissingDaughter(18)')
-vm.addAlias('lost_gamma', 'genNMissingDaughter(22)')
-vm.addAlias('lost_pi', 'genNMissingDaughter(211)')
-vm.addAlias('lost_K', 'genNMissingDaughter(321)')
+vm.addAlias('lost_nu', 'formula(genNMissingDaughter(18) <= 2)')
+vm.addAlias('lost_gamma', 'formula(genNMissingDaughter(22) <= 1)')
+vm.addAlias('lost_pi', 'formula(genNMissingDaughter(211) == 0)')
+vm.addAlias('lost_K', 'formula(genNMissingDaughter(321) == 0)')
+vm.addAlias(
+    'is1_lost_ph_0',
+    '''
+    formula(
+        daughter(1, daughter(0, isSignalAcceptMissingNeutrino))
+        * daughter(1, daughter(0, isSignalAcceptMissingNeutrino))
+    )
+    '''
+)
 
-vm.addAlias('is1_lost_ph_0', 'formula(daughter(1, daughter(0, isSignalAcceptMissingNeutrino))*daughter(1, daughter(0, isSignalAcceptMissingNeutrino)))')
-vm.addAlias('is1_lost_ph_1_1', 'formula(daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * (daughter(1, daughter(1, lost_nu)) * daughter(1, daughter(1, lost_gamma)) * passesCut(daughter(1, daughter(1, lost_pi)) == 0) * passesCut(daughter(1, daughter(1, lost_K)) == 0)))')
-vm.addAlias('is1_lost_ph_1_0', 'formula((daughter(1, daughter(0, lost_nu)) * daughter(1, daughter(0, lost_gamma)) * passesCut(daughter(1, daughter(0, lost_pi)) == 0) * passesCut(daughter(1, daughter(0, lost_K)) == 0)) * daughter(1, daughter(1, isSignalAcceptMissingNeutrino)))')
-vm.addAlias('is1_lost_ph_2', 'formula((daughter(1, daughter(0, lost_nu)) * daughter(1, daughter(0, lost_gamma)) * passesCut(daughter(1, daughter(0, lost_pi)) == 0) * passesCut(daughter(1, daughter(0, lost_K)) == 0)) * (daughter(1, daughter(1, lost_nu)) * daughter(1, daughter(1, lost_gamma)) * passesCut(daughter(1, daughter(1, lost_pi)) == 0) * passesCut(daughter(1, daughter(1, lost_K)) == 0)))')
+vm.addAlias(
+    'is1_lost_ph_1_1',
+    '''
+    formula(
+        daughter(1, daughter(0, isSignalAcceptMissingNeutrino))
+        * (
+            daughter(1, daughter(1, lost_nu))
+            * daughter(1, daughter(1, lost_gamma))
+            * daughter(1, daughter(1, lost_pi))
+            * daughter(1, daughter(1, lost_K))
+        )
+    )
+    '''
+)
+
+vm.addAlias(
+    'is1_lost_ph_1_0',
+    '''
+    formula(
+        (
+            daughter(1, daughter(0, lost_nu))
+            * daughter(1, daughter(0, lost_gamma))
+            * daughter(1, daughter(0, lost_pi))
+            * daughter(1, daughter(0, lost_K))
+        )
+        * daughter(1, daughter(1, isSignalAcceptMissingNeutrino))
+    )
+    '''
+)
+
+vm.addAlias(
+    'is1_lost_ph_2',
+    '''
+    formula(
+        (
+            daughter(1, daughter(0, lost_nu))
+            * daughter(1, daughter(0, lost_gamma))
+            * daughter(1, daughter(0, lost_pi))
+            * daughter(1, daughter(0, lost_K))
+        )
+        * (
+            daughter(1, daughter(1, lost_nu))
+            * daughter(1, daughter(1, lost_gamma))
+            * daughter(1, daughter(1, lost_pi))
+            * daughter(1, daughter(1, lost_K))
+        )
+    )
+    '''
+)
 
 vm.addAlias('is1', 'passesCut(formula(((is1_lost_ph_0 * passesCut(idec0 < 5) * passesCut(idec1 < 5)) + (is1_lost_ph_1_1 * passesCut(idec0 < 5) * passesCut(idec1 == 5)) + (is1_lost_ph_1_0 * passesCut(idec0 == 5) * passesCut(idec1 < 5)) + (is1_lost_ph_2 * passesCut(idec0 == 5) * passesCut(idec1 == 5)))) > 0 )')
-
-
-
 
 # Ntuples
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'is1'],
                      treename='Y5S', filename='Bs_2tau_sig_MC.root', path=path)
-
 
 #Process 1000 events
 print(path)
