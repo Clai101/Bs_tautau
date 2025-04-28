@@ -169,13 +169,13 @@ vm.addAlias('is0', 'daughter(0, isSignal)')
 vm.addAlias('lost_nu', 'formula(passesCut(genNMissingDaughter(18) <= 2) * 1.0)')
 vm.addAlias('lost_gamma', 'formula(passesCut(genNMissingDaughter(22) <= 1) * 1.0)')
 vm.addAlias('lost_pi', 'formula(passesCut(genNMissingDaughter(211) == 0) * 1.0)')
-vm.addAlias('lost_K', 'formula(passesCut(genNMissingDaughter(321) == 0) *1.0)')
+vm.addAlias('lost_K', 'formula(passesCut(genNMissingDaughter(321) == 0) * 1.0)')
 vm.addAlias(
     'is1_lost_ph_0',
     '''
     formula(
-        daughter(1, daughter(0, isSignalAcceptMissingNeutrino))
-        * daughter(1, daughter(0, isSignalAcceptMissingNeutrino))
+        (daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0)
+        * (daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0)
     )
     '''
 )
@@ -184,7 +184,7 @@ vm.addAlias(
     'is1_lost_ph_1_1',
     '''
     formula(
-        daughter(1, daughter(0, isSignalAcceptMissingNeutrino))
+        daughter(1, daughter(0, isSignalAcceptMissingNeutrino)) * 1.0
         * (
             daughter(1, daughter(1, lost_nu))
             * daughter(1, daughter(1, lost_gamma))
@@ -205,7 +205,7 @@ vm.addAlias(
             * daughter(1, daughter(0, lost_pi))
             * daughter(1, daughter(0, lost_K))
         )
-        * daughter(1, daughter(1, isSignalAcceptMissingNeutrino))
+        * daughter(1, daughter(1, isSignalAcceptMissingNeutrino)) * 1.0
     )
     '''
 )
@@ -230,7 +230,34 @@ vm.addAlias(
     '''
 )
 
-vm.addAlias('is1', 'passesCut(formula(((is1_lost_ph_0 * passesCut(idec0 < 5) * passesCut(idec1 < 5)) + (is1_lost_ph_1_1 * passesCut(idec0 < 5) * passesCut(idec1 == 5)) + (is1_lost_ph_1_0 * passesCut(idec0 == 5) * passesCut(idec1 < 5)) + (is1_lost_ph_2 * passesCut(idec0 == 5) * passesCut(idec1 == 5)))) > 0 )')
+vm.addAlias('is1', 
+    '''
+    passesCut(
+        formula(
+            (
+                is1_lost_ph_0 
+                * formula(passesCut(idec0 < 5) * 1.0) 
+                * formula(passesCut(idec1 < 5) * 1.0)
+            )
+            + (
+                is1_lost_ph_1_1 
+                * formula(passesCut(idec0 < 5) * 1.0) 
+                * formula(passesCut(idec1 == 5) * 1.0)
+            )
+            + (
+                is1_lost_ph_1_0 
+                * formula(passesCut(idec0 == 5) * 1.0) 
+                * formula(passesCut(idec1 < 5) * 1.0)
+            )
+            + (
+                is1_lost_ph_2 
+                * formula(passesCut(idec0 == 5) * 1.0) 
+                * formula(passesCut(idec1 == 5) * 1.0)
+            )
+        ) > 0
+    )
+    '''
+)
 
 # Ntuples
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'is1'],
