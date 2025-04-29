@@ -36,7 +36,6 @@ tau_m = 1.77693
 mu_m = 0.1056583755
 D_s_m = 1.96835
 
-
 # arguments
 if (len(sys.argv) < 2):
     print('Usage: B_converted_apply.py input output')
@@ -45,20 +44,16 @@ if (len(sys.argv) < 2):
 input_file  = sys.argv[1]
 output_file = sys.argv[2]
 
-
 # Create path
 path = b2.create_path()
-
 
 b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 
 # Load input ROOT files
-
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
-
 
 #Part 1
 
@@ -72,18 +67,15 @@ path.add_module('MCMatcherParticles', listName='K+:alle', looseMCMatching=True)
 copyParticles('pi0:alle','pi0:mdst', path=path)
 copyParticles('K_S0:alle','K_S0:mdst', path=path)
 
-
 copyList('K_L0:alle','K_L0:mdst',path=path)
 applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
 applyEventCuts('[formula(nParticlesInList(K_L0:alle))<=0]', path=path)
-
 
 applyCuts('K_S0:alle',f'abs(InvM - {K_s_m}) < 0.015 and goodBelleKshort == 1',path=path)
 applyCuts('pi0:alle',f'abs(InvM - {Pi_0_m}) < 0.015 and daughter(0, E) > 0.05 and daughter(1, E) > 0.05',path=path)
 
 vertex.kFit('pi0:alle', conf_level = 0.0, fit_type = 'mass',path=path)
 vertex.kFit('K_S0:alle', conf_level = 0.0, fit_type = 'massvertex',path=path)
-
 
 #Intermediate particles
 reconstructDecay('D_s+:1 -> K+:alle K-:alle pi+:alle', f'abs(InvM - {D_s_m}) < 0.015', 1, path=path)
@@ -92,9 +84,10 @@ copyLists('D_s+:alle',['D_s+:1', ], path=path)
 path.add_module('MCMatcherParticles', listName='D_s+:alle', looseMCMatching=True)
 vertex.kFit('D_s+:alle', conf_level = 0.0, fit_type = 'massvertex',path=path)
 
-
 reconstructDecay('B_s0:1 -> D_s-:alle pi+:alle', f'5.25 <= InvM  and  InvM <= 5.51', 1, path=path)
 copyLists('B_s0:alle',['B_s0:1', ], path=path)
+
+vm.addAlias('pcm','useCMSFrame(p)')
 
 path.add_module('MCMatcherParticles', listName='B_s0:alle', looseMCMatching=True)
 variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
