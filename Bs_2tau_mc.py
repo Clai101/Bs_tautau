@@ -41,14 +41,12 @@ D_s_m = 1.96835
 if (len(sys.argv) < 2):
     print('Usage: B_converted_apply.py input output')
     exit(1)
-
 input_file  = sys.argv[1]
 output_file = sys.argv[2]
 """
 
 # Create path
 path = b2.create_path()
-
 b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 
@@ -177,8 +175,6 @@ vm.addAlias('lost_nu_1', 'daughter(1, daughter(1, genNMissingDaughter(18)))')
 vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
-
-
 
 # Ntuples
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1'],
