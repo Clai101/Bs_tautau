@@ -87,6 +87,8 @@ vertex.kFit('D_s+:alle', conf_level = 0.0, fit_type = 'massvertex',path=path)
 reconstructDecay('B_s0:1 -> D_s-:alle pi+:alle', f'5.25 <= InvM  and  InvM <= 5.51', 1, path=path)
 copyLists('B_s0:alle',['B_s0:1', ], path=path)
 
+from variables import variables as vm
+
 vm.addAlias('pcm','useCMSFrame(p)')
 
 path.add_module('MCMatcherParticles', listName='B_s0:alle', looseMCMatching=True)
