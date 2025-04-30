@@ -16,6 +16,7 @@ from modularAnalysis import *
 import b2biiConversion
 import ROOT
 import vertex
+import fei
 from ROOT import Belle2
 
 Lamc_m = 2.28646
@@ -36,70 +37,50 @@ tau_m = 1.77693
 mu_m = 0.1056583755
 D_s_m = 1.96835
 
-"""
 # arguments
 if (len(sys.argv) < 2):
     print('Usage: B_converted_apply.py input output')
     exit(1)
 input_file  = sys.argv[1]
 output_file = sys.argv[2]
-"""
 
 # Create path
 path = b2.create_path()
 b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 
+
 # Load input ROOT files
-
-with open("txt.txt") as f:
-    a = f.readlines()
-
-b = []
-for line in a:
-    cleaned_line = line.split()
-    b.append(cleaned_line)
-
-c = []    
-for i in b:
-    for j in i:
-        if not ('53' in j):
-            c.append('/gpfs/home/belle2/matrk/B_tautau/MC_sig/gsim/mdst/' + j)
-
 os.environ['PGUSER'] = 'g0db'
-b2biiConversion.convertBelleMdstToBelleIIMdst(c, path=path)
+b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
+fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
+applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
+
+
+#Fei
+
+skim_id = sys.argv[3]
+if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
+    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
+else:
+    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
+
+particles = fei.get_channels()
+configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, monitor=False, cache=0)
+feistate = fei.get_path(particles, configuration)
+path.add_path(feistate.path)
+
+
+rankByHighest('B_s0:generic',   'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
+path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
+applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 
 #Part 1
 
 #FSP
-fillParticleList('pi+:alle','abs(dr) < 0.5 and abs(dz) < 2', path = path)
-fillParticleList('K+:alle','abs(dr) < 0.5 and abs(dz) < 2 and atcPIDBelle(3,2) > 0.6', path=path)
-
-path.add_module('MCMatcherParticles', listName='pi+:alle', looseMCMatching=True)
-path.add_module('MCMatcherParticles', listName='K+:alle', looseMCMatching=True)
-
-copyParticles('pi0:alle','pi0:mdst', path=path)
-copyParticles('K_S0:alle','K_S0:mdst', path=path)
-
-applyCuts('K_S0:alle',f'abs(InvM - {K_s_m}) < 0.015 and goodBelleKshort == 1',path=path)
-applyCuts('pi0:alle',f'abs(InvM - {Pi_0_m}) < 0.015 and daughter(0, E) > 0.05 and daughter(1, E) > 0.05',path=path)
-
-vertex.kFit('pi0:alle', conf_level = 0.0, fit_type = 'mass',path=path)
-vertex.kFit('K_S0:alle', conf_level = 0.0, fit_type = 'massvertex',path=path)
-
-
-#Intermediate particles
-reconstructDecay('D_s+:1 -> K+:alle K-:alle pi+:alle', f'abs(InvM - {D_s_m}) < 0.015', 1, path=path)
-copyLists('D_s+:alle',['D_s+:1', ], path=path)
-
-path.add_module('MCMatcherParticles', listName='D_s+:alle', looseMCMatching=True)
-vertex.kFit('D_s+:alle', conf_level = 0.0, fit_type = 'massvertex',path=path)
-
-
-reconstructDecay('B_s0:1 -> D_s-:alle pi+:alle', f'5.25 <= InvM  and  InvM <= 5.51', 1, path=path)
-copyLists('B_s0:alle',['B_s0:1', ], path=path)
+copyLists('B_s0:alle',['B_s0:generic', ], path=path)
 
 path.add_module('MCMatcherParticles', listName='B_s0:alle', looseMCMatching=True)
 variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
@@ -111,13 +92,16 @@ variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
 # Part 2
 
 #FSP +
+fillParticleList('pi+:alle','abs(dr) < 0.5 and abs(dz) < 2', path = path)
+path.add_module('MCMatcherParticles', listName='pi+:alle', looseMCMatching=True)
 
 
-copyList('K_L0:alle','K_L0:mdst',path=path)
-applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
-
+copyParticles('pi0:alle','pi0:mdst', path=path)
 copyParticles('gamma:alle','gamma:mdst',path=path)
+applyCuts('pi0:alle',f'abs(InvM - {Pi_0_m}) < 0.015 and daughter(0, E) > 0.05 and daughter(1, E) > 0.05',path=path)
 applyCuts('gamma:alle','goodBelleGamma == 1 and clusterBelleQuality == 0',path=path)
+
+vertex.kFit('pi0:alle', conf_level = 0.0, fit_type = 'mass',path=path)
 
 
 fillParticleList('e+:alle','abs(p) > 1 and abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path = path)
@@ -176,8 +160,8 @@ vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 
 # Ntuples
-variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1'],
-                     treename='Y5S', filename='Bs_2tau_sig_MC.root', path=path)
+variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1'],
+                     treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)
