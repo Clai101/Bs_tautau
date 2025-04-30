@@ -114,7 +114,6 @@ variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
 
 
 copyList('K_L0:alle','K_L0:mdst',path=path)
-applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
 
 copyParticles('gamma:alle','gamma:mdst',path=path)
 applyCuts('gamma:alle','goodBelleGamma == 1 and clusterBelleQuality == 0',path=path)

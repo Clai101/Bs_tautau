@@ -13,12 +13,11 @@ URL="http://bweb3/montecarlo.php?ex=${EXPERIMENT}&rs=${RUN_START}&re=${RUN_END}&
 rm -rf ${WORKDIR}
 mkdir -p ${WORKDIR}
 
-cp Bs_2tau_mc_inc.py  ${WORKDIR}
+cp Bs_2tau_mc_FEI.py ${WORKDIR}
 
 cd ${WORKDIR}
 OUTPUT_FILE=${EXPERIMENT}_${RUN_START}_${RUN_END}.root
 
-echo "basf2 -l error Bs_2tau_mc_inc.py \"${URL}\" ${OUTPUT_FILE} &> my_output_hack.log" > job_script
+echo "basf2 -l error Bs_2tau_mc_FEI.py \"${URL}\" ${OUTPUT_FILE} ${TY}_${STREAM} &> my_output_hack.log" > job_script
 chmod 755 job_script
-bsub -q s -e error.log -o output.log ./job_script
-#./job_script -e error.log -o output.log
+bsub -q l -e error.log -o output.log ./job_script

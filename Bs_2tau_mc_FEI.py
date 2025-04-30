@@ -48,15 +48,13 @@ output_file = sys.argv[2]
 path = b2.create_path()
 b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
+b2.register_module("SkimFiles")
 
 
 # Load input ROOT files
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
-
-fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
-applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
 
 
 #Fei
@@ -66,6 +64,11 @@ if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
     b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
 else:
     b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
+
+#SKIM
+fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
+applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
+
 
 particles = fei.get_channels()
 configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, monitor=False, cache=0)
@@ -131,6 +134,10 @@ copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=pa
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
 
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
+
+copyList('K_L0:alle','K_L0:mdst',path=path)
+applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
+
 
 from variables import variables as vm
 
