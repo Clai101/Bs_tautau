@@ -7,8 +7,8 @@
 
 
 ./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 5 &
-./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 0 &
-./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 0 &
-./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 0 &
-./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 0 &
+./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 4 &
+./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 3 &
+./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 2 &
+./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 1 &
 ./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds 0 &

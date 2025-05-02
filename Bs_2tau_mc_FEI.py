@@ -50,15 +50,12 @@ b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 b2.register_module("SkimFiles")
 
-
 # Load input ROOT files
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
-
 #Fei
-
 skim_id = sys.argv[3]
 if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
     b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
@@ -69,14 +66,12 @@ else:
 fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
 applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
 
-
 particles = fei.get_channels()
 configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, monitor=False, cache=0)
 feistate = fei.get_path(particles, configuration)
 path.add_path(feistate.path)
 
-
-rankByHighest('B_s0:generic',   'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
+rankByHighest('B_s0:generic', 'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
 applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 
@@ -97,7 +92,6 @@ variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
 #FSP +
 fillParticleList('pi+:alle','abs(dr) < 0.5 and abs(dz) < 2', path = path)
 path.add_module('MCMatcherParticles', listName='pi+:alle', looseMCMatching=True)
-
 
 copyParticles('pi0:alle','pi0:mdst', path=path)
 copyParticles('gamma:alle','gamma:mdst',path=path)
@@ -165,9 +159,10 @@ vm.addAlias('Miss_id_1', 'daughter(1, daughter(1, isSignalAcceptMissing))')
 vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
+vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
 # Ntuples
-variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1'],
+variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1'],
                      treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
