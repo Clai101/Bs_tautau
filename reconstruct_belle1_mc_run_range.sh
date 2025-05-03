@@ -8,11 +8,13 @@ STREAM=$6
 
 WORKDIR=~/B_tautau/run_Bs/Gen_MC/mc_${EXPERIMENT}_${RUN_START}_${RUN_END}_${TY}_${DATA_TYPE}_${STREAM}
 WORkCODE="Bs_2tau_mc_FEI.py" 
-absolute_path="$(cd "$(dirname "$0")" && pwd)/${WORkCODE}"
+absolute_path="$(pwd)/${WORkCODE}"
 OUTPUT_FILE="mc"
 
 URL="http://bweb3/montecarlo.php?ex=${EXPERIMENT}&rs=${RUN_START}&re=${RUN_END}&ty=${TY}&dt=${DATA_TYPE}&bl=caseB&dv=zfserv&st=${STREAM}"
 
+rm -rf ${WORKDIR}
+mkdir -p ${WORKDIR}
 cd ${WORKDIR}
 
 echo "basf2 -l error $absolute_path \"${URL}\" ${OUTPUT_FILE}.root ${TY}_${STREAM} &> ${OUTPUT_FILE}.log" > job_script
