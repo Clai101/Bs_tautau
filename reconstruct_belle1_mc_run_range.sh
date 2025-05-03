@@ -6,10 +6,10 @@ TY=$4
 DATA_TYPE=$5
 STREAM=$6
 
-WORKDIR=~/B_tautau/run_Bs/Gen_MC
+WORKDIR=~/B_tautau/run_Bs/Gen_MC/mc_${EXPERIMENT}_${RUN_START}_${RUN_END}_${TY}_${DATA_TYPE}_${STREAM}
 WORkCODE="Bs_2tau_mc_FEI.py" 
 absolute_path="$(cd "$(dirname "$0")" && pwd)/${WORkCODE}"
-OUTPUT_FILE="mc_${EXPERIMENT}_${RUN_START}_${RUN_END}_${TY}_${DATA_TYPE}_${STREAM}"
+OUTPUT_FILE="mc"
 
 URL="http://bweb3/montecarlo.php?ex=${EXPERIMENT}&rs=${RUN_START}&re=${RUN_END}&ty=${TY}&dt=${DATA_TYPE}&bl=caseB&dv=zfserv&st=${STREAM}"
 
