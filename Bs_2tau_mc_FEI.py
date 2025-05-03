@@ -81,11 +81,6 @@ applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 copyLists('B_s0:alle',['B_s0:generic', ], path=path)
 
 path.add_module('MCMatcherParticles', listName='B_s0:alle', looseMCMatching=True)
-variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
-                     treename='BS', filename='Bs_2tau_sig_MC.root', path=path)
-#vertex.kFit('B_s0:alle', conf_level = 0.0, fit_type = 'massvertex', path=path)
-
-#applyEventCuts('[formula(nParticlesInList(B_s0:alle) + nParticlesInList(anti-B_s0:alle)) == 1]', path=path)
 
 # Part 2
 
