@@ -79,7 +79,6 @@ applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 
 #FSP
 copyLists('B_s0:alle',['B_s0:generic', ], path=path)
-
 path.add_module('MCMatcherParticles', listName='B_s0:alle', looseMCMatching=True)
 
 # Part 2
@@ -110,7 +109,6 @@ for i, dec in enumerate(tau_dec):
 
 copyLists('tau+:alle',[f"tau+:{int(i)}" for i in range(len(tau_dec))], path=path)
 path.add_module('MCMatcherParticles', listName='tau+:alle', looseMCMatching=True)
-
 
 reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, ignoreIfTooManyCandidates = False, path=path)
 reconstructDecay('B_s0:tau -> tau+:alle', '', 2, ignoreIfTooManyCandidates = False, allowChargeViolation = True, path=path)
