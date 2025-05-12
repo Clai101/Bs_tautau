@@ -24,84 +24,80 @@ TH1F *h01 = new TH1F("h01","",400,-0.1,0.1)
 
 
 void cut() {
+std::string path = std::filesystem::current_path().string();
 
-TChain *pchn = new TChain("Y5S")
-
-double missedE, M0, p0, recM2, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
-int N_tracks_in_ROE, N_KL, __experiment__, __run__;
-unsigned int __event__;
-
-int main() {
-  std::string path = ".";
-
-  for (const auto & entry : fs::directory_iterator(path)) {
-    if (entry.path().extension() == ".root") {
-      pchn->Add(entry.path().string().c_str());
-    }
-  }
-}
+for (const auto & entry : fs::directory_iterator(path)) {
     
-pchn->SetBranchAddress("missedE", &missedE);
-pchn->SetBranchAddress("M0", &M0);
-pchn->SetBranchAddress("p0", &p0);
-pchn->SetBranchAddress("recM2", &recM2);
-pchn->SetBranchAddress("N_KL", &N_KL);
-pchn->SetBranchAddress("idec0", &idec0);
-pchn->SetBranchAddress("idec1", &idec1);
-pchn->SetBranchAddress("totalEnergyMC", &totalEnergyMC);
-pchn->SetBranchAddress("E_gamma_in_ROE", &E_gamma_in_ROE);
-pchn->SetBranchAddress("N_tracks_in_ROE", &N_tracks_in_ROE);
-pchn->SetBranchAddress("Bs_lik", &Bs_lik);
-pchn->SetBranchAddress("is0", &is0);
-pchn->SetBranchAddress("lost_nu_0", &lost_nu_0);
-pchn->SetBranchAddress("lost_gamma_0", &lost_gamma_0);
-pchn->SetBranchAddress("lost_pi_0", &lost_pi_0);
-pchn->SetBranchAddress("lost_K_0", &lost_K_0);
-pchn->SetBranchAddress("Miss_id_0", &Miss_id_0);
-pchn->SetBranchAddress("lost_nu_1", &lost_nu_1);
-pchn->SetBranchAddress("lost_gamma_1", &lost_gamma_1);
-pchn->SetBranchAddress("lost_pi_1", &lost_pi_1);
-pchn->SetBranchAddress("lost_K_1", &lost_K_1);
-pchn->SetBranchAddress("Miss_id_1", &Miss_id_1);
-pchn->SetBranchAddress("__experiment__", &__experiment__);
-pchn->SetBranchAddress("__run__", &__run__);
-pchn->SetBranchAddress("__event__", &__event__);
+    if (entry.path().extension() == ".root") {
+    TChain *pchn = new TChain("Y5S");
+    pchn->Add(entry.path().string().c_str());
 
+    double missedE, M0, p0, recM2, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
+    int N_tracks_in_ROE, N_KL, __experiment__, __run__;
+    unsigned int __event__;
 
-TFile *f = new TFile("root_after_cuts.root", "recreate");
-TTree *pchn1 = new TTree("Y5S", "Simple tree");
+    pchn->SetBranchAddress("missedE", &missedE);
+    pchn->SetBranchAddress("M0", &M0);
+    pchn->SetBranchAddress("p0", &p0);
+    pchn->SetBranchAddress("recM2", &recM2);
+    pchn->SetBranchAddress("N_KL", &N_KL);
+    pchn->SetBranchAddress("idec0", &idec0);
+    pchn->SetBranchAddress("idec1", &idec1);
+    pchn->SetBranchAddress("totalEnergyMC", &totalEnergyMC);
+    pchn->SetBranchAddress("E_gamma_in_ROE", &E_gamma_in_ROE);
+    pchn->SetBranchAddress("N_tracks_in_ROE", &N_tracks_in_ROE);
+    pchn->SetBranchAddress("Bs_lik", &Bs_lik);
+    pchn->SetBranchAddress("is0", &is0);
+    pchn->SetBranchAddress("lost_nu_0", &lost_nu_0);
+    pchn->SetBranchAddress("lost_gamma_0", &lost_gamma_0);
+    pchn->SetBranchAddress("lost_pi_0", &lost_pi_0);
+    pchn->SetBranchAddress("lost_K_0", &lost_K_0);
+    pchn->SetBranchAddress("Miss_id_0", &Miss_id_0);
+    pchn->SetBranchAddress("lost_nu_1", &lost_nu_1);
+    pchn->SetBranchAddress("lost_gamma_1", &lost_gamma_1);
+    pchn->SetBranchAddress("lost_pi_1", &lost_pi_1);
+    pchn->SetBranchAddress("lost_K_1", &lost_K_1);
+    pchn->SetBranchAddress("Miss_id_1", &Miss_id_1);
+    pchn->SetBranchAddress("__experiment__", &__experiment__);
+    pchn->SetBranchAddress("__run__", &__run__);
+    pchn->SetBranchAddress("__event__", &__event__);
 
-pchn1->Branch("missedE", &missedE);
-pchn1->Branch("M0", &M0);
-pchn1->Branch("p0", &p0);
-pchn1->Branch("recM2", &recM2);
-pchn1->Branch("N_KL", &N_KL);
-pchn1->Branch("idec0", &idec0);
-pchn1->Branch("idec1", &idec1);
-pchn1->Branch("totalEnergyMC", &totalEnergyMC);
-pchn1->Branch("E_gamma_in_ROE", &E_gamma_in_ROE);
-pchn1->Branch("N_tracks_in_ROE", &N_tracks_in_ROE);
-pchn1->Branch("Bs_lik", &Bs_lik);
-pchn1->Branch("is0", &is0);
-pchn1->Branch("lost_nu_0", &lost_nu_0);
-pchn1->Branch("lost_gamma_0", &lost_gamma_0);
-pchn1->Branch("lost_pi_0", &lost_pi_0);
-pchn1->Branch("lost_K_0", &lost_K_0);
-pchn1->Branch("Miss_id_0", &Miss_id_0);
-pchn1->Branch("lost_nu_1", &lost_nu_1);
-pchn1->Branch("lost_gamma_1", &lost_gamma_1);
-pchn1->Branch("lost_pi_1", &lost_pi_1);
-pchn1->Branch("lost_K_1", &lost_K_1);
-pchn1->Branch("Miss_id_1", &Miss_id_1);
-pchn1->Branch("__experiment__", &__experiment__);
-pchn1->Branch("__run__", &__run__);
-pchn1->Branch("__event__", &__event__);
+    std::string outputFileName = entry.path().stem().string() + "_cut.root";
+    TFile *f = new TFile(outputFileName.c_str(), "recreate");
+    TTree *pchn1 = new TTree("Y5S", "Simple tree");
 
-int nentries = pchn->GetEntries();    
-for (int i = 0; i < nentries; ++i) {
-    pchn->GetEntry(i);
-    if (Bs_lik > 0.0001 && abs(p0-0.47)<0.1)
-        pchn1->Fill();
-}
-pchn1->Write();
-}
+    pchn1->Branch("missedE", &missedE);
+    pchn1->Branch("M0", &M0);
+    pchn1->Branch("p0", &p0);
+    pchn1->Branch("recM2", &recM2);
+    pchn1->Branch("N_KL", &N_KL);
+    pchn1->Branch("idec0", &idec0);
+    pchn1->Branch("idec1", &idec1);
+    pchn1->Branch("totalEnergyMC", &totalEnergyMC);
+    pchn1->Branch("E_gamma_in_ROE", &E_gamma_in_ROE);
+    pchn1->Branch("N_tracks_in_ROE", &N_tracks_in_ROE);
+    pchn1->Branch("Bs_lik", &Bs_lik);
+    pchn1->Branch("is0", &is0);
+    pchn1->Branch("lost_nu_0", &lost_nu_0);
+    pchn1->Branch("lost_gamma_0", &lost_gamma_0);
+    pchn1->Branch("lost_pi_0", &lost_pi_0);
+    pchn1->Branch("lost_K_0", &lost_K_0);
+    pchn1->Branch("Miss_id_0", &Miss_id_0);
+    pchn1->Branch("lost_nu_1", &lost_nu_1);
+    pchn1->Branch("lost_gamma_1", &lost_gamma_1);
+    pchn1->Branch("lost_pi_1", &lost_pi_1);
+    pchn1->Branch("lost_K_1", &lost_K_1);
+    pchn1->Branch("Miss_id_1", &Miss_id_1);
+    pchn1->Branch("__experiment__", &__experiment__);
+    pchn1->Branch("__run__", &__run__);
+    pchn1->Branch("__event__", &__event__);
+
+    int nentries = pchn->GetEntries();    
+    for (int i = 0; i < nentries; ++i) {
+        pchn->GetEntry(i);
+        if (Bs_lik > 0.0001 && abs(p0-0.47)<0.1)
+            pchn1->Fill();
+    }
+    pchn1->Write();
+
+}}}
