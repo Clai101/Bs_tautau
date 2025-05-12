@@ -22,12 +22,13 @@ TH1F *h01 = new TH1F("h01","",400,-0.1,0.1)
 */
 
 
-void invisible_uds_tree() {
+void cut() {
 
 
 
-double missedE, M0, p0, recM2, N_KL, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, N_tracks_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
-int N_tracks_in_ROE, N_KS,N_KL2;
+double missedE, M0, p0, recM2, N_KL, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
+int N_tracks_in_ROE;
+
     
 pchn->SetBranchAddress("missedE", &missedE);
 pchn->SetBranchAddress("M0", &M0);
@@ -52,7 +53,7 @@ pchn->SetBranchAddress("lost_pi_1", &lost_pi_1);
 pchn->SetBranchAddress("lost_K_1", &lost_K_1);
 pchn->SetBranchAddress("Miss_id_1", &Miss_id_1);
 
-TFile *f = new TFile("invisible_uds_wo_tracks.root", "recreate");
+TFile *f = new TFile("root_after_cuts.root", "recreate");
 TTree *pchn1 = new TTree("Y5S", "Simple tree");
 
 pchn1->Branch("missedE", &missedE);
@@ -82,7 +83,7 @@ pchn1->Branch("Miss_id_1", &Miss_id_1);
 int nentries = pchn->GetEntries();    
 for (int i = 0; i < nentries; ++i) {
     pchn->GetEntry(i);
-    if (sigProb > 0.0001 && abs(pcm-0.47)<0.1)
+    if (Bs_lik > 0.0001 && abs(p0-0.47)<0.1)
         pchn1->Fill();
 }
 pchn1->Write();
