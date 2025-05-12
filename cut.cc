@@ -26,8 +26,9 @@ void cut() {
 
 
 
-double missedE, M0, p0, recM2, N_KL, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
-int N_tracks_in_ROE;
+double missedE, M0, p0, recM2, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
+int N_tracks_in_ROE, N_KL, __experiment__, __run__;
+unsigned int __event__;
 
     
 pchn->SetBranchAddress("missedE", &missedE);
@@ -52,6 +53,10 @@ pchn->SetBranchAddress("lost_gamma_1", &lost_gamma_1);
 pchn->SetBranchAddress("lost_pi_1", &lost_pi_1);
 pchn->SetBranchAddress("lost_K_1", &lost_K_1);
 pchn->SetBranchAddress("Miss_id_1", &Miss_id_1);
+pchn->SetBranchAddress("__experiment__", &__experiment__);
+pchn->SetBranchAddress("__run__", &__run__);
+pchn->SetBranchAddress("__event__", &__event__);
+
 
 TFile *f = new TFile("root_after_cuts.root", "recreate");
 TTree *pchn1 = new TTree("Y5S", "Simple tree");
@@ -78,7 +83,9 @@ pchn1->Branch("lost_gamma_1", &lost_gamma_1);
 pchn1->Branch("lost_pi_1", &lost_pi_1);
 pchn1->Branch("lost_K_1", &lost_K_1);
 pchn1->Branch("Miss_id_1", &Miss_id_1);
-
+pchn1->Branch("__experiment__", &__experiment__);
+pchn1->Branch("__run__", &__run__);
+pchn1->Branch("__event__", &__event__);
 
 int nentries = pchn->GetEntries();    
 for (int i = 0; i < nentries; ++i) {
