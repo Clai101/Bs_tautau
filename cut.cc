@@ -26,10 +26,11 @@ TH1F *h01 = new TH1F("h01","",400,-0.1,0.1)
 void cut() {
 std::string path = std::filesystem::current_path().string();
 
+TChain *pchn = new TChain("Y5S");
 for (const auto & entry : fs::directory_iterator(path)) {
     
+
     if (entry.path().extension() == ".root") {
-    TChain *pchn = new TChain("Y5S");
     pchn->Add(entry.path().string().c_str());
 
     double missedE, M0, p0, recM2, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
@@ -99,5 +100,5 @@ for (const auto & entry : fs::directory_iterator(path)) {
             pchn1->Fill();
     }
     pchn1->Write();
-
+    pchn->Reset();
 }}}
