@@ -1,6 +1,7 @@
 #include <vector>
 #include <cmath>
 #include <fstream>
+#include <filesystem>
 #include <string>
 #include <TMinuit.h>
 #include <TCanvas.h>
@@ -24,12 +25,21 @@ TH1F *h01 = new TH1F("h01","",400,-0.1,0.1)
 
 void cut() {
 
-
+TChain *pchn = new TChain("Y5S")
 
 double missedE, M0, p0, recM2, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
 int N_tracks_in_ROE, N_KL, __experiment__, __run__;
 unsigned int __event__;
 
+int main() {
+  std::string path = ".";
+
+  for (const auto & entry : fs::directory_iterator(path)) {
+    if (entry.path().extension() == ".root") {
+      pchn->Add(entry.path().string().c_str());
+    }
+  }
+}
     
 pchn->SetBranchAddress("missedE", &missedE);
 pchn->SetBranchAddress("M0", &M0);
