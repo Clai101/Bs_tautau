@@ -37,7 +37,7 @@ if ((dir = opendir(path.c_str())) != NULL) {
             
             TChain *pchn = new TChain("Y5S");
             
-            pchn->Add((path + "/" + fileName).c_str());
+            pchn->Add((fileName).c_str());
 
             double missedE, M0, p0, recM2, idec0, idec1, totalEnergyMC, E_gamma_in_ROE, Bs_lik, is0, lost_nu_0, lost_gamma_0, lost_pi_0, lost_K_0, Miss_id_0, lost_nu_1, lost_gamma_1, lost_pi_1, lost_K_1, Miss_id_1;
             int N_tracks_in_ROE, N_KL, __experiment__, __run__;
@@ -69,7 +69,7 @@ if ((dir = opendir(path.c_str())) != NULL) {
             pchn->SetBranchAddress("__run__", &__run__);
             pchn->SetBranchAddress("__event__", &__event__);
 
-            TFile *f = new TFile((path + "/" + fileName.substr(0, fileName.size() - 5) + "_cut.root").c_str(), "recreate");
+            TFile *f = new TFile((fileName.substr(0, fileName.size() - 5) + "_cut.root").c_str(), "recreate");
             TTree *pchn1 = new TTree("Y5S", "Simple tree");
 
             pchn1->Branch("missedE", &missedE);
