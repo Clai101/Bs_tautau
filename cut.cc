@@ -9,6 +9,7 @@
 #include <TMath.h>
 #include <TH1F.h>
 #include <Math/SpecFuncMathCore.h>
+#include <dirent.h>
 
 /*
 
@@ -68,7 +69,7 @@ if ((dir = opendir(path.c_str())) != NULL) {
             pchn->SetBranchAddress("__run__", &__run__);
             pchn->SetBranchAddress("__event__", &__event__);
 
-            TFile *f = new TFile((path + "/" + fileName[:-5] + "_cut.root").c_str(), "recreate");
+            TFile *f = new TFile((path + "/" + fileName.substr(0, fileName.size() - 5) + "_cut.root").c_str(), "recreate");
             TTree *pchn1 = new TTree("Y5S", "Simple tree");
 
             pchn1->Branch("missedE", &missedE);
