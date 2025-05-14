@@ -154,7 +154,9 @@ vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
-# Ntuples
+# Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
+
+for i, dec in enumerate(tau_dec)
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1'],
                      treename='Y5S', filename=output_file, path=path)
 
