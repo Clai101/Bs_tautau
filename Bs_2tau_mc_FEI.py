@@ -95,8 +95,8 @@ applyCuts('gamma:alle','goodBelleGamma == 1 and clusterBelleQuality == 0',path=p
 vertex.kFit('pi0:alle', conf_level = 0.0, fit_type = 'mass',path=path)
 
 
-fillParticleList('e+:alle','abs(p) > 1 and abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path = path)
-fillParticleList('mu+:alle','abs(p) > 1 and abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
+fillParticleList('e+:alle','abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path = path)
+fillParticleList('mu+:alle','abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
 
 
 reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
@@ -154,10 +154,35 @@ vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
+vm.addAlias('p_tau_d_1_0', 'daughter(1, daughter(1,  daughter(0, p)))')
+vm.addAlias('p_tau_d_1_1', 'daughter(1, daughter(1,  daughter(1, p)))')
+vm.addAlias('p_tau_d_1_2', 'daughter(1, daughter(1,  daughter(2, p)))')
+
+vm.addAlias('p_tau_d_0_0', 'daughter(1, daughter(0,  daughter(0, p)))')
+vm.addAlias('p_tau_d_0_1', 'daughter(1, daughter(0,  daughter(1, p)))')
+vm.addAlias('p_tau_d_0_2', 'daughter(1, daughter(0,  daughter(2, p)))')
+
+vm.addAlias('p_tau_d_1_0', 'daughter(1, daughter(0,  daughter(0, p)))')
+vm.addAlias('p_tau_d_1_1', 'daughter(1, daughter(0,  daughter(1, p)))')
+vm.addAlias('p_tau_d_1_2', 'daughter(1, daughter(0,  daughter(2, p)))')
+
+vm.addAlias('p_tau_dd_0_0', 'daughter(1, daughter(0,  daughter(0, daughter(0, p))))')
+vm.addAlias('p_tau_dd_0_1', 'daughter(1, daughter(0,  daughter(1, daughter(1, p))))')
+
+vm.addAlias('p_tau_dd_1_0', 'daughter(1, daughter(1,  daughter(0, daughter(0, p))))')
+vm.addAlias('p_tau_dd_1_1', 'daughter(1, daughter(1,  daughter(0, daughter(1, p))))')
+
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 
 for i, dec in enumerate(tau_dec)
-variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1'],
+variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
+                                       'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
+                                       'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
+                                        'p_tau_d_0_0', 'p_tau_d_0_1', 'p_tau_d_0_2',
+                                       'p_tau_d_1_0', 'p_tau_d_1_1', 'p_tau_d_1_2',
+                                        'p_tau_dd_0_0', 'p_tau_dd_0_1',
+                                        'p_tau_dd_1_0', 'p_tau_dd_1_1',
+                                       ],
                      treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
