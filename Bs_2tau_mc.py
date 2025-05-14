@@ -119,15 +119,14 @@ copyParticles('gamma:alle','gamma:mdst',path=path)
 applyCuts('gamma:alle','goodBelleGamma == 1 and clusterBelleQuality == 0',path=path)
 
 
-fillParticleList('e+:alle','abs(p) > 1 and abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path = path)
-fillParticleList('mu+:alle','abs(p) > 1 and abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
+fillParticleList('e+:alle','abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path = path)
+fillParticleList('mu+:alle','abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
 
 
 reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
 copyLists('rho+:alle',['rho+:1', ], path=path)
 
-tau_dec = ["e+:alle", ]
-#"mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"
+tau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 for i, dec in enumerate(tau_dec):
     reconstructDecay(f'tau+:{int(i)} -> {dec}', '', int(i), path=path)
 
