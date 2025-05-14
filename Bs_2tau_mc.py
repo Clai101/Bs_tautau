@@ -174,7 +174,7 @@ vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 
-vm.addAlias('first_daughter', 'daughter(1, daughter(1,  daughter(0,  daughter(1, mcPDG)))')
+vm.addAlias('first_daughter', 'daughter(1, daughter(1,  daughter(0, mcPDG)))')
 
 
 
