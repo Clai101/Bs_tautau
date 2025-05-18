@@ -132,7 +132,7 @@ copyLists('B_s0:tauonic',['B_s0:tautau', 'B_s0:tau'], path=path)
 
 reconstructDecay('Upsilon(5S):alle0 -> B_s0:alle B_s0:tauonic', '', 1, path=path)
 reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tauonic', '', 2, path=path)
-copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=path)
+copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', ], path=path)
 
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
 
@@ -241,7 +241,7 @@ for tau_ind in [0, 1]:
             else:
                 expr = f'daughter({tau_ind}, daughter(0, daughter(0, atcPIDBelle({part}, {hypo}))))'
 
-            conditioned = f'{expr} * (idec{tau_ind} = {dec_index})'
+            conditioned = f'{expr} * (idec{tau_ind} == {dec_index})'
             terms.append(conditioned)
 
         formula_expr = f'formula({reduce(lambda x, y: f"{x} + {y}", terms)})'
