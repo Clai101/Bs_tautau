@@ -200,58 +200,32 @@ for tau_index in [0, 1]:
 print('\n\n\n_________________________________________10_________________________________________\n\n\n')
 
 
-for tau_index in [0, 1]:  # для двух τ
-    for d_index in range(3):  # максимум 3 дочерних
-        prefix = f"tau{tau_index}_d{d_index}"
-
-        # PID переменные для мюона (1 против 0 = e)
-        vm.addAlias(f'mu_vs_e_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, atcPIDBelle(1, 0))) )')
-        vm.addAlias(f'mu_vs_pi_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, atcPIDBelle(1, 2))) )')
-        vm.addAlias(f'mu_vs_K_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, atcPIDBelle(1, 3))) )')
-
-        # muID
-        vm.addAlias(f'muID_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, muIDBelle)))')
-
-        # last point z
-        vm.addAlias(f'mu_last_z_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, trackLastPointZ)))')
-        vm.addAlias(f'mu_last_r_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, trackLastPointR)))')
-
-
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 print('\n\n\n_________________________________________11_________________________________________\n\n\n')
+
+for tau_index in [0, 1]:  # для двух τ
+    # last point z
+    print(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
+    print(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')
+
 
 
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        'muID_tau1_d0', 'muID_tau1_d1', 'muID_tau1_d2',
-
                                         #Full-event парметры
                                         'missedE','M0', 'p0', 'recM2',
 
-                                        #Гипотезы
-                                        'mu_vs_e_tau0_d0', 'mu_vs_pi_tau0_d0', 'mu_vs_K_tau0_d0',
-                                        'mu_vs_e_tau0_d1', 'mu_vs_pi_tau0_d1', 'mu_vs_K_tau0_d1',
-                                        'mu_vs_e_tau0_d2', 'mu_vs_pi_tau0_d2', 'mu_vs_K_tau0_d2',
-
-                                        'mu_vs_e_tau1_d0', 'mu_vs_pi_tau1_d0', 'mu_vs_K_tau1_d0',
-                                        'mu_vs_e_tau1_d1', 'mu_vs_pi_tau1_d1', 'mu_vs_K_tau1_d1',
-                                        'mu_vs_e_tau1_d2', 'mu_vs_pi_tau1_d2', 'mu_vs_K_tau1_d2',
 
                                         # Последние точки трека
-                                        'mu_last_z_tau0_d0', 'mu_last_r_tau0_d0',
-                                        'mu_last_z_tau0_d1', 'mu_last_r_tau0_d1',
-                                        'mu_last_z_tau0_d2', 'mu_last_r_tau0_d2',
+                                        'tau_last_z_0', 'tau_last_z_1',
+                                        'tau_last_r_0', 'tau_last_r_1',
 
-                                        'mu_last_z_tau1_d0', 'mu_last_r_tau1_d0',
-                                        'mu_last_z_tau1_d1', 'mu_last_r_tau1_d1',
-                                        'mu_last_z_tau1_d2', 'mu_last_r_tau1_d2',
-
-                                        # Импульсы дочерей tau
+                                        # Углы дочерей tau
                                         'theta_tau_d_0_0', 'theta_tau_d_0_1', 'theta_tau_d_0_2',
                                         'theta_tau_d_1_0', 'theta_tau_d_1_1', 'theta_tau_d_1_2',
 
-                                        # Импульсы дочерей rho
+                                        # Углы дочерей rho
                                         'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
                                         'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
                                        ],
