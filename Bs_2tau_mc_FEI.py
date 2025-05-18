@@ -128,7 +128,7 @@ path.add_module('MCMatcherParticles', listName='tau+:alle', looseMCMatching=True
 
 reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, ignoreIfTooManyCandidates = False, path=path)
 reconstructDecay('B_s0:tau -> tau+:alle', '', 2, ignoreIfTooManyCandidates = False, allowChargeViolation = True, path=path)
-copyLists('B_s0:tauonic',['B_s0:tautau', ], path=path)
+copyLists('B_s0:tauonic',['B_s0:tautau', 'B_s0:tau'], path=path)
 
 reconstructDecay('Upsilon(5S):alle0 -> B_s0:alle B_s0:tauonic', '', 1, path=path)
 reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tauonic', '', 2, path=path)
