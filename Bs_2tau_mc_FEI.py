@@ -241,7 +241,7 @@ for tau_ind in [0, 1]:
             else:
                 expr = f'daughter({tau_ind}, daughter(0, daughter(0, atcPIDBelle({part}, {hypo}))))'
 
-            conditioned = f'{expr} * (idec{tau_ind} == {dec_index})'
+            conditioned = f'{expr} * (idec{tau_ind} = {dec_index})'
             terms.append(conditioned)
 
         formula_expr = f'formula({reduce(lambda x, y: f"{x} + {y}", terms)})'
