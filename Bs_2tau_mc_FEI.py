@@ -205,8 +205,8 @@ print('\n\n\n_________________________________________11________________________
 
 for tau_index in [0, 1]:  # для двух τ
     # last point z
-    print(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
-    print(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')
+    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
+    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')
 
 
 
