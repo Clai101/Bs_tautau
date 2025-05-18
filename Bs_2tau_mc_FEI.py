@@ -171,7 +171,6 @@ vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
-vm.addAlias('r', 'formula(sqrt(px**2 + py**2))')
 
 
 
@@ -203,9 +202,9 @@ for tau_index in [0, 1]:
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 
 for tau_index in [0, 1]:  # для двух τ
-    # last point z
+    expr = f'formula((daughter(1, daughter({tau_index}, x)))**2 + (daughter(1, daughter({tau_index}, y)))**2)'
     vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
-    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')    
+    vm.addAlias(f'tau_last_r_{tau_index}', expr)    
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
