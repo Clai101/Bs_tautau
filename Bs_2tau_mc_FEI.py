@@ -39,6 +39,8 @@ D_s_m = 1.96835
 
 print('\n\n\n_________________________________________0_________________________________________\n\n\n')
 # arguments
+
+
 if (len(sys.argv) < 2):
     print('Usage: B_converted_apply.py input output')
     exit(1)
@@ -46,6 +48,8 @@ input_file  = sys.argv[1]
 output_file = sys.argv[2]
 ___ = sys.argv[3]
 
+print(input_file)
+print(output_file)
 print('\n\n\n_________________________________________1_________________________________________\n\n\n')
 
 # Create path
@@ -53,6 +57,7 @@ path = b2.create_path()
 b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 b2.register_module("SkimFiles")
+
 
 # Load input ROOT files
 os.environ['PGUSER'] = 'g0db'
