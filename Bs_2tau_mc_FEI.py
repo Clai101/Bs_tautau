@@ -171,6 +171,7 @@ vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
+vm.addAlias('r', 'formula(sqrt(px**2 + py**2))')
 
 
 
@@ -188,6 +189,7 @@ for tau_index in [0, 1]:
     daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, M)))'
     vm.addAlias(alias_name, daughter_path)
     values.append(alias_name)
+
 
 # p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
 for tau_index in [0, 1]:
