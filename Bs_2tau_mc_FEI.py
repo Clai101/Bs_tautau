@@ -154,34 +154,72 @@ vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
-vm.addAlias('p_tau_d_1_0', 'daughter(1, daughter(1,  daughter(0, p)))')
-vm.addAlias('p_tau_d_1_1', 'daughter(1, daughter(1,  daughter(1, p)))')
-vm.addAlias('p_tau_d_1_2', 'daughter(1, daughter(1,  daughter(2, p)))')
+for tau_index in [0, 1]: 
+    for d_index in range(3):  
+        alias_name = f'p_tau_d_{tau_index}_{d_index}'
+        daughter_path = f'daughter(1, daughter({tau_index}, daughter({d_index}, useCMSFrame(cosTheta))))'
+        vm.addAlias(alias_name, daughter_path)
 
-vm.addAlias('p_tau_d_0_0', 'daughter(1, daughter(0,  daughter(0, p)))')
-vm.addAlias('p_tau_d_0_1', 'daughter(1, daughter(0,  daughter(1, p)))')
-vm.addAlias('p_tau_d_0_2', 'daughter(1, daughter(0,  daughter(2, p)))')
+# p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
+for tau_index in [0, 1]:
+        for d2 in range(2):
+            alias_name = f'p_tau_dd_{tau_index}_0_{d2}'
+            daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
+            vm.addAlias(alias_name, daughter_path)
 
-vm.addAlias('p_tau_d_1_0', 'daughter(1, daughter(0,  daughter(0, p)))')
-vm.addAlias('p_tau_d_1_1', 'daughter(1, daughter(0,  daughter(1, p)))')
-vm.addAlias('p_tau_d_1_2', 'daughter(1, daughter(0,  daughter(2, p)))')
+for tau_index in [0, 1]:  # для двух τ
+    for d_index in range(3):  # максимум 3 дочерних
+        prefix = f"tau{tau_index}_d{d_index}"
 
-vm.addAlias('p_tau_dd_0_0', 'daughter(1, daughter(0,  daughter(0, daughter(0, p))))')
-vm.addAlias('p_tau_dd_0_1', 'daughter(1, daughter(0,  daughter(1, daughter(1, p))))')
+        # PID переменные для мюона (1 против 0 = e)
+        vm.addAlias(f'mu_vs_e_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, atcPIDBelle(1, 0))) )')
+        vm.addAlias(f'mu_vs_pi_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, atcPIDBelle(1, 2))) )')
+        vm.addAlias(f'mu_vs_K_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, atcPIDBelle(1, 3))) )')
 
-vm.addAlias('p_tau_dd_1_0', 'daughter(1, daughter(1,  daughter(0, daughter(0, p))))')
-vm.addAlias('p_tau_dd_1_1', 'daughter(1, daughter(1,  daughter(0, daughter(1, p))))')
+        # muID
+        vm.addAlias(f'muID_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, muIDBelle)))')
+
+        # last point z
+        vm.addAlias(f'mu_last_z_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, trackLastPointZ)))')
+        vm.addAlias(f'mu_last_r_{prefix}', f'daughter(1, daughter({tau_index}, daughter({d_index}, trackLastPointR)))')
+
 
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 
 for i, dec in enumerate(tau_dec)
-variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
+variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        'p_tau_d_0_0', 'p_tau_d_0_1', 'p_tau_d_0_2',
-                                       'p_tau_d_1_0', 'p_tau_d_1_1', 'p_tau_d_1_2',
-                                        'p_tau_dd_0_0', 'p_tau_dd_0_1',
-                                        'p_tau_dd_1_0', 'p_tau_dd_1_1',
+                                        'muID_tau1_d0', 'muID_tau1_d1', 'muID_tau1_d2',
+
+                                        #Full-event парметры
+                                        'missedE','M0', 'p0', 'recM2'
+
+                                        #Гипотезы
+                                        'mu_vs_e_tau0_d0', 'mu_vs_pi_tau0_d0', 'mu_vs_K_tau0_d0',
+                                        'mu_vs_e_tau0_d1', 'mu_vs_pi_tau0_d1', 'mu_vs_K_tau0_d1',
+                                        'mu_vs_e_tau0_d2', 'mu_vs_pi_tau0_d2', 'mu_vs_K_tau0_d2',
+
+                                        'mu_vs_e_tau1_d0', 'mu_vs_pi_tau1_d0', 'mu_vs_K_tau1_d0',
+                                        'mu_vs_e_tau1_d1', 'mu_vs_pi_tau1_d1', 'mu_vs_K_tau1_d1',
+                                        'mu_vs_e_tau1_d2', 'mu_vs_pi_tau1_d2', 'mu_vs_K_tau1_d2',
+
+                                        # Последние точки трека
+                                        'mu_last_z_tau0_d0', 'mu_last_r_tau0_d0',
+                                        'mu_last_z_tau0_d1', 'mu_last_r_tau0_d1',
+                                        'mu_last_z_tau0_d2', 'mu_last_r_tau0_d2',
+
+                                        'mu_last_z_tau1_d0', 'mu_last_r_tau1_d0',
+                                        'mu_last_z_tau1_d1', 'mu_last_r_tau1_d1',
+                                        'mu_last_z_tau1_d2', 'mu_last_r_tau1_d2',
+
+                                        # Импульсы дочерей tau
+                                        'theta_tau_d_0_0', 'theta_tau_d_0_1', 'theta_tau_d_0_2',
+                                        'theta_tau_d_1_0', 'theta_tau_d_1_1', 'theta_tau_d_1_2',
+
+                                        # Импульсы дочерей rho
+                                        'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
+                                        'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
                                        ],
                      treename='Y5S', filename=output_file, path=path)
 
