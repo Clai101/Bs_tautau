@@ -89,9 +89,15 @@ configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, m
 feistate = fei.get_path(particles, configuration)
 path.add_path(feistate.path)
 
+print('\n\n\n_________________________________________6_________________________________________\n\n\n')
+
+
 rankByHighest('B_s0:generic', 'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
 applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
+
+print('\n\n\n_________________________________________7_________________________________________\n\n\n')
+
 
 #Part 1
 
@@ -142,6 +148,8 @@ applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
 
 copyList('K_L0:alle','K_L0:mdst',path=path)
 applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
+
+print('\n\n\n_________________________________________8_________________________________________\n\n\n')
 
 
 from variables import variables as vm
