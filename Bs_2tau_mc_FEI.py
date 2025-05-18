@@ -250,7 +250,7 @@ nested_channels = {3}  # только rho
         vm.addAlias(alias_name, formula_expr)
    """     
 
-vm.addAlias("try", "formula(daughter(0, daughter(0, daughter(0, atcPIDBelle(1, 0)))) * (idec0 == 1))")
+vm.addAlias("try", "formula(daughter(0, daughter(0, daughter(0, atcPIDBelle(1, 0)))) * (idec0 = 1))")
 
 
 
