@@ -228,7 +228,7 @@ part_map = {
     5: 2,  # pi gamma
 }
 nested_channels = {3}  # только rho
-for tau_ind in [0, 1]:
+"""for tau_ind in [0, 1]:
     for hypo in [0, 1, 2, 4]:  
         terms = []
         for dec_index in range(len(tau_dec)):
@@ -248,15 +248,16 @@ for tau_ind in [0, 1]:
         alias_name = f'vs_hypo{hypo}'
         values.append(alias_name)
         vm.addAlias(alias_name, formula_expr)
-        
+   """     
 
+vm.addAlias("try", "formula(daughter(0, daughter(0, daughter(0, atcPIDBelle(1, 0)))) * (idec0 == 1))")
 
 
 
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        'missedE','M0', 'p0', 'recM2'] + values,
+                                        'missedE','M0', 'p0', 'recM2', "try"] + values,
                      treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
