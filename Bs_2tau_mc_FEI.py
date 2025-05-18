@@ -59,10 +59,16 @@ b2.register_module("EnableMyMetaVariable")
 b2.register_module("SkimFiles")
 
 
+print('\n\n\n_________________________________________2_________________________________________\n\n\n')
+
+# Load input ROOT files
 # Load input ROOT files
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
+
+print('\n\n\n_________________________________________3_________________________________________\n\n\n')
+
 
 #Fei
 skim_id = sys.argv[3]
