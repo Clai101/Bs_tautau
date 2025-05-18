@@ -183,6 +183,12 @@ for tau_index in [0, 1]:
         vm.addAlias(alias_name, daughter_path)
         values.append(alias_name)
 
+for tau_index in [0, 1]: 
+    alias_name = f'tau_d_{tau_index}_0'
+    daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, M)))'
+    vm.addAlias(alias_name, daughter_path)
+    values.append(alias_name)
+
 # p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
 for tau_index in [0, 1]:
         for d2 in range(2):
