@@ -214,17 +214,47 @@ for tau_index in [0, 1]:  # для двух τ
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
-ind  = ["e", "mu", "pi", "K"]
+from functools import reduce
 
-for tau_index in [0, 1]:  # для двух τ
-    for d_index1 in range(len(ind)):  # для трех дочерей
-        for d_index2 in range(len(ind)):  # для трех дочерей
-            vm.addAlias(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_0', f'daughter(1, daughter({tau_index}, daughter(0, atcPIDBelle({d_index1}, {d_index2}))) )')
-            vm.addAlias(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_1', f'daughter(1, daughter({tau_index}, daughter(1, atcPIDBelle({d_index1}, {d_index2}))) )')
-            vm.addAlias(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_2', f'daughter(1, daughter({tau_index}, daughter(2, atcPIDBelle({d_index1}, {d_index2}))) )')
-            values.append(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_0')
-            values.append(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_1')
-            values.append(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_2')
+tau_dec = [
+    "e+:alle",                            # 0
+    "mu+:alle",                           # 1
+    "pi+:alle",                           # 2
+    "rho+:alle",                          # 3
+    "pi+:alle pi+:alle pi-:alle",        # 4
+    "pi+:alle gamma:alle",               # 5
+]
+
+part_map = {
+    0: 0,  # e
+    1: 1,  # mu
+    2: 2,  # pi
+    3: 2,  # rho → pi
+    4: 2,  # 3pi
+    5: 2,  # pi gamma
+}
+nested_channels = {3}  # только rho
+for tau_ind in [0, 1]:
+    for hypo in [0, 1, 2, 4]:  
+        terms = []
+        for dec_index in range(len(tau_dec)):
+            part = part_map[dec_index]
+            if part == hypo:
+                continue 
+
+            if dec_index in nested_channels:
+                expr = f'daughter({tau_ind}, daughter(0, daughter(0, daughter(0, atcPIDBelle({part}, {hypo})))))'
+            else:
+                expr = f'daughter({tau_ind}, daughter(0, daughter(0, atcPIDBelle({part}, {hypo}))))'
+
+            conditioned = f'{expr} * (idec{tau_ind} == {dec_index})'
+            terms.append(conditioned)
+
+        formula_expr = f'formula({reduce(lambda x, y: f"{x} + {y}", terms)})'
+        alias_name = f'vs_hypo{hypo}'
+        values.append(alias_name)
+        vm.addAlias(alias_name, formula_expr)
+        
 
 
 print('\n\n\n_________________________________________11_________________________________________\n\n\n')
