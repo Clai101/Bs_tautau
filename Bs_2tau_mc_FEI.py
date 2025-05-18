@@ -37,7 +37,6 @@ tau_m = 1.77693
 mu_m = 0.1056583755
 D_s_m = 1.96835
 
-print('\n\n\n_________________________________________0_________________________________________\n\n\n')
 # arguments
 
 
@@ -49,7 +48,6 @@ output_file = sys.argv[2]
 
 print(input_file)
 print(output_file)
-print('\n\n\n_________________________________________1_________________________________________\n\n\n')
 
 # Create path
 path = b2.create_path()
@@ -58,7 +56,6 @@ b2.register_module("EnableMyMetaVariable")
 b2.register_module("SkimFiles")
 
 
-print('\n\n\n_________________________________________2_________________________________________\n\n\n')
 
 # Load input ROOT files
 # Load input ROOT files
@@ -66,7 +63,6 @@ os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
-print('\n\n\n_________________________________________3_________________________________________\n\n\n')
 
 
 #Fei
@@ -77,26 +73,22 @@ if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
 else:
     b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
 
-print('\n\n\n_________________________________________4_________________________________________\n\n\n')
 #SKIM
 fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
 applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
 
-print('\n\n\n_________________________________________5_________________________________________\n\n\n')
 
 particles = fei.get_channels()
 configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, monitor=False, cache=0)
 feistate = fei.get_path(particles, configuration)
 path.add_path(feistate.path)
 
-print('\n\n\n_________________________________________6_________________________________________\n\n\n')
 
 
 rankByHighest('B_s0:generic', 'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
 applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 
-print('\n\n\n_________________________________________7_________________________________________\n\n\n')
 
 
 #Part 1
@@ -149,7 +141,6 @@ applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
 copyList('K_L0:alle','K_L0:mdst',path=path)
 applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
 
-print('\n\n\n_________________________________________8_________________________________________\n\n\n')
 
 
 from variables import variables as vm
@@ -181,7 +172,6 @@ vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
-print('\n\n\n_________________________________________9_________________________________________\n\n\n')
 
 
 values = []
@@ -202,15 +192,12 @@ for tau_index in [0, 1]:
             values.append(alias_name)
 
 
-print('\n\n\n_________________________________________10_________________________________________\n\n\n')
-
-
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 
 for tau_index in [0, 1]:  # для двух τ
     # last point z
     vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
-    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')
+    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')    
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
@@ -257,13 +244,11 @@ for tau_ind in [0, 1]:
         
 
 
-print('\n\n\n_________________________________________11_________________________________________\n\n\n')
 
 
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        #Full-event парметры
                                         'missedE','M0', 'p0', 'recM2'] + values,
                      treename='Y5S', filename=output_file, path=path)
 
