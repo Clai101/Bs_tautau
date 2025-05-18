@@ -77,10 +77,12 @@ if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
 else:
     b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
 
-print('\n\n\n_________________________________________3_________________________________________\n\n\n')
+print('\n\n\n_________________________________________4_________________________________________\n\n\n')
 #SKIM
 fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
 applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
+
+print('\n\n\n_________________________________________5_________________________________________\n\n\n')
 
 particles = fei.get_channels()
 configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, monitor=False, cache=0)
