@@ -37,12 +37,16 @@ tau_m = 1.77693
 mu_m = 0.1056583755
 D_s_m = 1.96835
 
+print('\n\n\n_________________________________________0_________________________________________\n\n\n')
 # arguments
 if (len(sys.argv) < 2):
     print('Usage: B_converted_apply.py input output')
     exit(1)
 input_file  = sys.argv[1]
 output_file = sys.argv[2]
+___ = sys.argv[3]
+
+print('\n\n\n_________________________________________1_________________________________________\n\n\n')
 
 # Create path
 path = b2.create_path()
