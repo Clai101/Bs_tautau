@@ -181,6 +181,9 @@ vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
+print('\n\n\n_________________________________________9_________________________________________\n\n\n')
+
+
 for tau_index in [0, 1]: 
     for d_index in range(3):  
         alias_name = f'p_tau_d_{tau_index}_{d_index}'
@@ -193,6 +196,9 @@ for tau_index in [0, 1]:
             alias_name = f'p_tau_dd_{tau_index}_0_{d2}'
             daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
             vm.addAlias(alias_name, daughter_path)
+
+print('\n\n\n_________________________________________10_________________________________________\n\n\n')
+
 
 for tau_index in [0, 1]:  # для двух τ
     for d_index in range(3):  # максимум 3 дочерних
@@ -212,6 +218,7 @@ for tau_index in [0, 1]:  # для двух τ
 
 
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
+print('\n\n\n_________________________________________11_________________________________________\n\n\n')
 
 
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
