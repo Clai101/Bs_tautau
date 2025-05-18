@@ -130,6 +130,7 @@ from variables import variables as vm
 
 vm.addAlias('pcm','useCMSFrame(p)')
 vm.addAlias('p0','daughter(0,useCMSFrame(p))')
+vm.addAlias('theta_Bs','daughter(0,useCMSFrame(cosTheta))')
 vm.addAlias('M0','daughter(0,M)')
 vm.addAlias('missedE', 'formula(Ecms - useCMSFrame(E))')
 
@@ -219,7 +220,9 @@ variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC'
 
                                         # Импульсы дочерей rho
                                         'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
-                                        'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
+                                        'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1',
+
+
                                        ],
                      treename='Y5S', filename=output_file, path=path)
 
