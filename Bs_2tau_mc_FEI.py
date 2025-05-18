@@ -255,7 +255,7 @@ variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC'
                                         'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
                                         'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
                                        ],
-                     treename='Y5S', filename="mc.root", path=path)
+                     treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)
