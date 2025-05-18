@@ -209,13 +209,8 @@ for tau_index in [0, 1]:  # для двух τ
 
 print('\n\n\n_________________________________________11_________________________________________\n\n\n')
 
-variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 
-                                       'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 
-                                       'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 
-                                       'lost_K_1', 'Miss_id_1',],
-                     treename='Y5S', filename=output_file, path=path)
 
-"""variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
+variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
                                         #Full-event парметры
@@ -234,7 +229,7 @@ variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', '
                                         'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
                                         'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
                                        ],
-                     treename='Y5S', filename=output_file, path=path)"""
+                     treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)
