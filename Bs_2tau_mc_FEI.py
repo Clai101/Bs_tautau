@@ -184,11 +184,14 @@ vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 print('\n\n\n_________________________________________9_________________________________________\n\n\n')
 
 
+values = []
+
 for tau_index in [0, 1]: 
     for d_index in range(3):  
         alias_name = f'theta_tau_d_{tau_index}_{d_index}'
         daughter_path = f'daughter(1, daughter({tau_index}, daughter({d_index}, useCMSFrame(cosTheta))))'
         vm.addAlias(alias_name, daughter_path)
+        values.append(alias_name)
 
 # p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
 for tau_index in [0, 1]:
@@ -196,6 +199,8 @@ for tau_index in [0, 1]:
             alias_name = f'theta_tau_dd_{tau_index}_0_{d2}'
             daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
             vm.addAlias(alias_name, daughter_path)
+            values.append(alias_name)
+
 
 print('\n\n\n_________________________________________10_________________________________________\n\n\n')
 
@@ -206,6 +211,21 @@ for tau_index in [0, 1]:  # для двух τ
     # last point z
     vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
     vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, r))')
+    values.append(f'tau_last_z_{tau_index}')
+    values.append(f'tau_last_r_{tau_index}')
+
+ind  = ["e", "mu", "pi", "K"]
+
+for tau_index in [0, 1]:  # для двух τ
+    for d_index1 in range(len(ind)):  # для трех дочерей
+        for d_index2 in range(len(ind)):  # для трех дочерей
+            vm.addAlias(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_0', f'daughter(1, daughter({tau_index}, daughter(0, atcPIDBelle({d_index1}, {d_index2}))) )')
+            vm.addAlias(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_1', f'daughter(1, daughter({tau_index}, daughter(1, atcPIDBelle({d_index1}, {d_index2}))) )')
+            vm.addAlias(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_2', f'daughter(1, daughter({tau_index}, daughter(2, atcPIDBelle({d_index1}, {d_index2}))) )')
+            values.append(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_0')
+            values.append(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_1')
+            values.append(f'{ind[d_index1]}_vs_{ind[d_index2]}_{tau_index}_2')
+
 
 print('\n\n\n_________________________________________11_________________________________________\n\n\n')
 
@@ -214,21 +234,7 @@ variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC'
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
                                         #Full-event парметры
-                                        'missedE','M0', 'p0', 'recM2',
-
-
-                                        # Последние точки трека
-                                        'tau_last_z_0', 'tau_last_z_1',
-                                        'tau_last_r_0', 'tau_last_r_1',
-
-                                        # Углы дочерей tau
-                                        'theta_tau_d_0_0', 'theta_tau_d_0_1', 'theta_tau_d_0_2',
-                                        'theta_tau_d_1_0', 'theta_tau_d_1_1', 'theta_tau_d_1_2',
-
-                                        # Углы дочерей rho
-                                        'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
-                                        'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
-                                       ],
+                                        'missedE','M0', 'p0', 'recM2'] + values,
                      treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
