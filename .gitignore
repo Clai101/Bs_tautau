@@ -6,3 +6,4 @@ hist*/
 *.o
 myenv/
 scipy_extra/
+**/__*

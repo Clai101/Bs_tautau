@@ -186,14 +186,14 @@ print('\n\n\n_________________________________________9_________________________
 
 for tau_index in [0, 1]: 
     for d_index in range(3):  
-        alias_name = f'p_tau_d_{tau_index}_{d_index}'
+        alias_name = f'theta_tau_d_{tau_index}_{d_index}'
         daughter_path = f'daughter(1, daughter({tau_index}, daughter({d_index}, useCMSFrame(cosTheta))))'
         vm.addAlias(alias_name, daughter_path)
 
 # p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
 for tau_index in [0, 1]:
         for d2 in range(2):
-            alias_name = f'p_tau_dd_{tau_index}_0_{d2}'
+            alias_name = f'theta_tau_dd_{tau_index}_0_{d2}'
             daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
             vm.addAlias(alias_name, daughter_path)
 
@@ -227,7 +227,7 @@ variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC'
                                         'muID_tau1_d0', 'muID_tau1_d1', 'muID_tau1_d2',
 
                                         #Full-event парметры
-                                        'missedE','M0', 'p0', 'recM2'
+                                        'missedE','M0', 'p0', 'recM2',
 
                                         #Гипотезы
                                         'mu_vs_e_tau0_d0', 'mu_vs_pi_tau0_d0', 'mu_vs_K_tau0_d0',
@@ -253,11 +253,9 @@ variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC'
 
                                         # Импульсы дочерей rho
                                         'theta_tau_dd_0_0_0', 'theta_tau_dd_0_0_1',
-                                        'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1',
-
-
+                                        'theta_tau_dd_1_0_0', 'theta_tau_dd_1_0_1'
                                        ],
-                     treename='Y5S', filename=output_file, path=path)
+                     treename='Y5S', filename="mc.root", path=path)
 
 #Process 1000 events
 print(path)
