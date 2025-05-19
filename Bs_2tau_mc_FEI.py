@@ -245,7 +245,7 @@ for tau_ind in [0, 1]:
             terms.append(conditioned)
 
         formula_expr = f'formula({reduce(lambda x, y: f"{x} + {y}", terms)})'
-        alias_name = f'vs_hypo{hypo}'
+        alias_name = f'{tau_ind}_vs_hypo{hypo}'
         values.append(alias_name)
         vm.addAlias(alias_name, formula_expr)
 
