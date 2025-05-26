@@ -199,9 +199,8 @@ for tau_index in [0, 1]:
 
 
 for tau_index in [0, 1]:
-    expr = f'formula((daughter(1, daughter(0, daughter({tau_index}, x))))**2 + (daughter(1, daughter(0, daughter({tau_index}, y))))**2)'
-    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, z)))')
-    vm.addAlias(f'tau_last_r_{tau_index}', expr)    
+    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, dz)))')
+    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, dr)))')
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
