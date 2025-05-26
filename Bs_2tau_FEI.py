@@ -199,13 +199,12 @@ for tau_index in [0, 1]:
 
 
 for tau_index in [0, 1]:
-    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, dz)))')
-    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, dr)))')
+    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
+    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
 
-nested_channels = {3}
 for tau_ind in [0, 1]:
     for hypo1 in [0, 1, 2, 4]:  
         for hypo2 in [0, 1, 2, 4]:  
