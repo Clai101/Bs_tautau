@@ -200,8 +200,8 @@ for tau_index in [0, 1]:
 
 for tau_index in [0, 1]:
     expr = f'formula((daughter(1, daughter(0, daughter({tau_index}, x))))**2 + (daughter(1, daughter(0, daughter({tau_index}, y))))**2)'
-    print(f'tau_last_z_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, z)))')
-    print(f'tau_last_r_{tau_index}', expr)    
+    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter(0, daughter({tau_index}, z)))')
+    vm.addAlias(f'tau_last_r_{tau_index}', expr)    
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
@@ -213,7 +213,7 @@ for tau_ind in [0, 1]:
             expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2})))))'
             alias_name = f'PID_{hypo1}_vs_{hypo2}_tau{tau_ind}'
             values.append(alias_name)
-            print(alias_name, expr)
+            vm.addAlias(alias_name, expr)
 
 
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
@@ -222,8 +222,6 @@ variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC'
                                         'missedE','M0', 'p0', 'recM2'] + values,
                      treename='Y5S', filename=output_file, path=path)
 
-#Process 1000 events
 print(path)
-#b2.process(path, max_event=100000)
 b2.process(path)
 print(b2.statistics)
