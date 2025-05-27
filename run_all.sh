@@ -2,24 +2,24 @@
 
 for i in {0..5}
 do
-    ./reconstruct_belle1_mc_hadron_y5s_s.sh evtgen-nonbsbs $i &
+    ./reconstruct_belle1_mc_hadron_y5s.sh evtgen-nonbsbs $i s &
     wait
 done
 
 for i in {0..5}
 do
-    ./reconstruct_belle1_mc_hadron_y5s_l.sh evtgen-uds $i &
+    ./reconstruct_belle1_mc_hadron_y5s.sh evtgen-bsbs $i s &
+    wait
+done
+
+for i in {0..5}
+do
+    ./reconstruct_belle1_mc_hadron_y5s.sh evtgen-uds $i l &
     wait
 done
 
 for i in {0..5}
 do 
-    ./reconstruct_belle1_mc_hadron_y5s_l.sh evtgen-charm $i &
-    wait
-done
-
-for i in {0..5}
-do
-    ./reconstruct_belle1_mc_hadron_y5s_s.sh evtgen-bsbs $i &
+    ./reconstruct_belle1_mc_hadron_y5s.sh evtgen-charm $i l &
     wait
 done
