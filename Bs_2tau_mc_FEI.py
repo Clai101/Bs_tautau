@@ -201,54 +201,20 @@ for tau_index in [0, 1]:
 
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 
-for tau_index in [0, 1]:  # для двух τ
-    expr = f'formula((daughter(1, daughter({tau_index}, x)))**2 + (daughter(1, daughter({tau_index}, y)))**2)'
-    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, z))')
-    vm.addAlias(f'tau_last_r_{tau_index}', expr)    
+for tau_index in [0, 1]:
+    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
+    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
 
-from functools import reduce
 
-tau_dec = [
-    "e+:alle",                            # 0
-    "mu+:alle",                           # 1
-    "pi+:alle",                           # 2
-    "rho+:alle",                          # 3
-    "pi+:alle pi+:alle pi-:alle",        # 4
-    "pi+:alle gamma:alle",               # 5
-]
-
-part_map = {
-    0: 0,  # e
-    1: 1,  # mu
-    2: 2,  # pi
-    3: 2,  # rho → pi
-    4: 2,  # 3pi
-    5: 2,  # pi gamma
-}
-nested_channels = {3}  # только rho
 for tau_ind in [0, 1]:
-    for hypo in [0, 1, 2, 4]:  
-        terms = []
-        for dec_index in range(len(tau_dec)):
-            part = part_map[dec_index]
-            if part == hypo:
-                continue 
-
-            if dec_index in nested_channels:
-                expr = f'daughter({tau_ind}, daughter(0, daughter(0, daughter(0, atcPIDBelle({part}, {hypo})))))'
-            else:
-                expr = f'daughter({tau_ind}, daughter(0, daughter(0, atcPIDBelle({part}, {hypo}))))'
-
-            conditioned = f'({expr} * extraInfo((idec{tau_ind} = {dec_index})))'
-            terms.append(conditioned)
-
-        formula_expr = f'formula({reduce(lambda x, y: f"{x} + {y}", terms)})'
-        alias_name = f'{tau_ind}_vs_hypo{hypo}'
-        values.append(alias_name)
-        vm.addAlias(alias_name, formula_expr)
-
+    for hypo1 in [0, 1, 2, 4]:  
+        for hypo2 in [0, 1, 2, 4]:  
+            expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2})))))'
+            alias_name = f'PID_{hypo1}_vs_{hypo2}_tau{tau_ind}'
+            values.append(alias_name)
+            vm.addAlias(alias_name, expr)
 
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
