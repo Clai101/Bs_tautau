@@ -211,7 +211,7 @@ for tau_index in [0, 1]:
 for tau_ind in [0, 1]:
     for hypo1 in [0, 1, 2, 4]:  
         for hypo2 in [0, 1, 2, 4]:  
-            expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2})))))'
+            expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2}))))'
             alias_name = f'PID_{hypo1}_vs_{hypo2}_tau{tau_ind}'
             values.append(alias_name)
             vm.addAlias(alias_name, expr)
