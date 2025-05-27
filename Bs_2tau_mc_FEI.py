@@ -191,21 +191,21 @@ for tau_index in [0, 1]:
 
 
 # p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
-#for tau_index in [0, 1]:
-#        for d2 in range(2):
-#            alias_name = f'theta_tau_dd_{tau_index}_0_{d2}'
-#            daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
-#            vm.addAlias(alias_name, daughter_path)
-#            values.append(alias_name)
+for tau_index in [0, 1]:
+        for d2 in range(2):
+            alias_name = f'theta_tau_dd_{tau_index}_0_{d2}'
+            daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
+            vm.addAlias(alias_name, daughter_path)
+            values.append(alias_name)
 
 
 # Ntuplestau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
 
-for tau_index in [0, 1]:
-    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
-    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
-    values.append(f'tau_last_z_{tau_index}')
-    values.append(f'tau_last_r_{tau_index}')
+#for tau_index in [0, 1]:
+#    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
+#    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
+#    values.append(f'tau_last_z_{tau_index}')
+#    values.append(f'tau_last_r_{tau_index}')
 
 
 for tau_ind in [0, 1]:
