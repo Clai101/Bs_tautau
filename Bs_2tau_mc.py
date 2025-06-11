@@ -53,15 +53,21 @@ b2.register_module("EnableMyMetaVariable")
 
 # Load input ROOT files
 
+if (len(sys.argv) < 2):
+    print('Usage: B_converted_apply.py input output')
+    exit(1)
+input_file  = sys.argv[1]
+output_file = sys.argv[2]
 
-directory = Path("/gpfs/home/belle2/matrk/Extend/gsim_out/mdst")
 
-mdst_files = list(directory.glob("*.mdst"))
+#directory = Path("/gpfs/home/belle2/matrk/Extend/gsim_out/mdst")
 
-full_paths = [str(file.resolve()) for file in mdst_files]
+#mdst_files = list(directory.glob("*.mdst"))
+
+#full_paths = [str(file.resolve()) for file in mdst_files]
 
 os.environ['PGUSER'] = 'g0db'
-b2biiConversion.convertBelleMdstToBelleIIMdst(full_paths[:5], path=path)
+b2biiConversion.convertBelleMdstToBelleIIMdst([input_file, ], path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
 #Part 1
@@ -189,7 +195,7 @@ variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', '
                                        'p_tau_d_1_0', 'p_tau_d_1_1', 'p_tau_d_1_2', 
                                        'p_tau_d_0_0', 'p_tau_d_0_1', 'p_tau_d_0_2',
                                        'p_tau_dd_0_0', 'p_tau_dd_0_1', 'p_tau_dd_1_0', 'p_tau_dd_1_1'],
-                     treename='Y5S', filename='Bs_2tau_sig_MC.root', path=path)
+                     treename='Y5S', filename='output_file', path=path)
 
 #Process 1000 events
 print(path)
