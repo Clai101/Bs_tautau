@@ -172,33 +172,15 @@ vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 
-vm.addAlias('p_tau_d_1_0', 'daughter(1, daughter(1,  daughter(0, p)))')
-vm.addAlias('p_tau_d_1_1', 'daughter(1, daughter(1,  daughter(1, p)))')
-vm.addAlias('p_tau_d_1_2', 'daughter(1, daughter(1,  daughter(2, p)))')
-
-vm.addAlias('p_tau_d_0_0', 'daughter(1, daughter(0,  daughter(0, p)))')
-vm.addAlias('p_tau_d_0_1', 'daughter(1, daughter(0,  daughter(1, p)))')
-vm.addAlias('p_tau_d_0_2', 'daughter(1, daughter(0,  daughter(2, p)))')
-
-vm.addAlias('p_tau_d_1_0', 'daughter(1, daughter(0,  daughter(0, p)))')
-vm.addAlias('p_tau_d_1_1', 'daughter(1, daughter(0,  daughter(1, p)))')
-vm.addAlias('p_tau_d_1_2', 'daughter(1, daughter(0,  daughter(2, p)))')
-
-vm.addAlias('p_tau_dd_0_0', 'daughter(1, daughter(0,  daughter(0, daughter(0, p))))')
-vm.addAlias('p_tau_dd_0_1', 'daughter(1, daughter(0,  daughter(1, daughter(1, p))))')
-
-vm.addAlias('p_tau_dd_1_0', 'daughter(1, daughter(1,  daughter(0, daughter(0, p))))')
-vm.addAlias('p_tau_dd_1_1', 'daughter(1, daughter(1,  daughter(0, daughter(1, p))))')
+vm.addAlias('p_tau1', 'daughter(1, daughter(1, p))')
+vm.addAlias('p_tau0', 'daughter(1, daughter(0, p))')
 
 # Ntuples
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 
                                        'E_gamma_in_ROE', 'N_tracks_in_ROE', 'is0', 'lost_nu_0', 'lost_gamma_0', 
                                        'lost_pi_0', 'lost_K_0', 'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 
-                                       'lost_K_1', 'Miss_id_1', 
-                                       'p_tau_d_1_0', 'p_tau_d_1_1', 'p_tau_d_1_2', 
-                                       'p_tau_d_0_0', 'p_tau_d_0_1', 'p_tau_d_0_2',
-                                       'p_tau_dd_0_0', 'p_tau_dd_0_1', 'p_tau_dd_1_0', 'p_tau_dd_1_1'],
-                     treename='Y5S', filename='output_file', path=path)
+                                       'lost_K_1', 'Miss_id_1', 'p_tau1', 'p_tau0'],
+                     treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)

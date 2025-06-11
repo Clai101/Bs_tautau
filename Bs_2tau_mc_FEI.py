@@ -45,6 +45,7 @@ if (len(sys.argv) < 2):
     exit(1)
 input_file  = sys.argv[1]
 output_file = sys.argv[2]
+skim_id = sys.argv[3]
 
 print(input_file)
 print(output_file)
@@ -55,27 +56,27 @@ b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 b2.register_module("SkimFiles")
 
+if skim_id == "Sig_mc":
+    if ('evtgen_exp_53' in input_file):
+        b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/bin/53_localdb/database.txt')
 
-
-# Load input ROOT files
-# Load input ROOT files
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
 
-
 #Fei
-skim_id = sys.argv[3]
-print(skim_id)
-if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
-    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
-else:
-    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
 
-#SKIM
-fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
-applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
+print(skim_id)
+if skim_id != "Sig_mc":
+    if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
+        b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
+    else:
+        b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
+
+    #SKIM
+    fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
+    applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
 
 
 particles = fei.get_channels()
@@ -83,13 +84,9 @@ configuration = fei.config.FeiConfiguration(prefix='FEI_TEST', training=False, m
 feistate = fei.get_path(particles, configuration)
 path.add_path(feistate.path)
 
-
-
 rankByHighest('B_s0:generic', 'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
 applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
-
-
 
 #Part 1
 
@@ -173,15 +170,16 @@ vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
 
-
 values = []
 
 for tau_index in [0, 1]: 
-    for d_index in range(3):  
-        alias_name = f'theta_tau_d_{tau_index}_{d_index}'
-        daughter_path = f'daughter(1, daughter({tau_index}, daughter({d_index}, useCMSFrame(cosTheta))))'
-        vm.addAlias(alias_name, daughter_path)
-        values.append(alias_name)
+    alias_name = f'theta_tau_{tau_index}'
+    daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(cosTheta)))'
+    vm.addAlias(alias_name, daughter_path)
+    alias_name = f'p_tau_{tau_index}'
+    daughter_path = f'daughter(1, daughter({tau_index}, p))'
+    vm.addAlias(alias_name, daughter_path)
+    values.append(alias_name)
 
 for tau_index in [0, 1]: 
     alias_name = f'tau_d_{tau_index}_0'
@@ -189,21 +187,11 @@ for tau_index in [0, 1]:
     vm.addAlias(alias_name, daughter_path)
     values.append(alias_name)
 
-
-# p_tau_dd_{tau_index}_{d1}_{d2} — если есть глубже: дочка от дочки
-for tau_index in [0, 1]:
-        for d2 in range(2):
-            alias_name = f'theta_tau_dd_{tau_index}_0_{d2}'
-            daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, daughter({d2}, useCMSFrame(cosTheta)))))'
-            vm.addAlias(alias_name, daughter_path)
-            values.append(alias_name)
-
 for tau_index in [0, 1]:
     vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
     vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
     values.append(f'tau_last_z_{tau_index}')
     values.append(f'tau_last_r_{tau_index}')
-
 
 for tau_ind in [0, 1]:
     for hypo1 in [0, 1, 2, 4]:  
