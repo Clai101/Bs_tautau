@@ -14,12 +14,11 @@ do
   rm -rf ${WORKDIR}
   mkdir -p ${WORKDIR}
 
-  #cp run.py channels.py backward_compatibility_layer.py ${WORKDIR}
   cp Bs_2tau_mc.py ${WORKDIR}
 
   cd ${WORKDIR}
   OUTPUT_FILE=${name_no_ext}.root
-  echo "basf2 -l error run.py \"${file}\" ${OUTPUT_FILE} &> mc.log" > job_script
+  echo "basf2 -l error Bs_2tau_mc.py \"${file}\" ${OUTPUT_FILE} &> mc.log" > job_script
   chmod 755 job_script
   bsub -q s ./job_script
 
