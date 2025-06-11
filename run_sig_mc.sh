@@ -18,7 +18,7 @@ do
 
   cd ${WORKDIR}
   OUTPUT_FILE=${name_no_ext}.root
-  echo "basf2 -l error Bs_2tau_mc_FEI.py \"${file}\" ${OUTPUT_FILE} &> mc.log" > job_script
+  echo "basf2 -l error Bs_2tau_mc_FEI.py \"${file}\" ${OUTPUT_FILE} Sig_mc &> mc.log" > job_script
   chmod 755 job_script
   bsub -q s ./job_script
 

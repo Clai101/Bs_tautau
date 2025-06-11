@@ -40,7 +40,7 @@ D_s_m = 1.96835
 # arguments
 
 
-if (len(sys.argv) < 2):
+if (len(sys.argv) < 3):
     print('Usage: B_converted_apply.py input output')
     exit(1)
 input_file  = sys.argv[1]
