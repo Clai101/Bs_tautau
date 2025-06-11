@@ -16,6 +16,7 @@ from modularAnalysis import *
 import b2biiConversion
 import ROOT
 import vertex
+from pathlib import Path
 from ROOT import Belle2
 
 Lamc_m = 2.28646
@@ -52,24 +53,16 @@ b2.register_module("EnableMyMetaVariable")
 
 # Load input ROOT files
 
-with open("txt.txt") as f:
-    a = f.readlines()
 
-b = []
-for line in a:
-    cleaned_line = line.split()
-    b.append(cleaned_line)
+directory = Path("/gpfs/home/belle2/matrk/Extend/gsim_out/mdst")
 
-c = []    
-for i in b:
-    for j in i:
-        if not ('53' in j):
-            c.append('/gpfs/home/belle2/matrk/B_tautau/MC_sig/gsim/mdst/' + j)
+mdst_files = list(directory.glob("*.mdst"))
+
+full_paths = [str(file.resolve()) for file in mdst_files]
 
 os.environ['PGUSER'] = 'g0db'
-b2biiConversion.convertBelleMdstToBelleIIMdst(c, path=path)
+b2biiConversion.convertBelleMdstToBelleIIMdst(full_paths[:5], path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
-
 
 #Part 1
 
@@ -111,7 +104,6 @@ variablesToNtuple('B_s0:alle', ['M', 'pcm', 'isSignal'],
 # Part 2
 
 #FSP +
-
 
 copyList('K_L0:alle','K_L0:mdst',path=path)
 
@@ -190,7 +182,6 @@ vm.addAlias('p_tau_dd_0_1', 'daughter(1, daughter(0,  daughter(1, daughter(1, p)
 
 vm.addAlias('p_tau_dd_1_0', 'daughter(1, daughter(1,  daughter(0, daughter(0, p))))')
 vm.addAlias('p_tau_dd_1_1', 'daughter(1, daughter(1,  daughter(0, daughter(1, p))))')
-
 
 # Ntuples
 variablesToNtuple('Upsilon(5S):alle', ['missedE','M0', 'p0', 'recM2', 'idec0', 'idec1', 'totalEnergyMC', 
