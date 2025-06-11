@@ -66,6 +66,9 @@ output_file = sys.argv[2]
 
 #full_paths = [str(file.resolve()) for file in mdst_files]
 
+if ('evtgen_exp_53' in input_file):
+    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/bin/53_localdb/database.txt')
+
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst([input_file, ], path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
