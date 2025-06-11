@@ -68,13 +68,12 @@ setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 #Fei
 
 print(skim_id)
-if skim_id != "Sig_mc":
-    if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
-        b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
-    else:
-        b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
+if (skim_id[-1] == '0' or skim_id[-1] == '1' or skim_id[-1] == '2'):
+    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/250623_all/localdb/database.txt')
+else:
+    b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/fei/training_results/060123_all/localdb/database.txt')
 
-    #SKIM
+if skim_id != "Sig_mc":
     fillParticleList('pi+:skim','pseudo_skim_y5s_' + skim_id[7:] + ' == 1',path=path)
     applyEventCuts('[nParticlesInList(pi+:skim)!=0]', path=path)
 
