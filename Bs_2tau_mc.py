@@ -166,6 +166,12 @@ vm.addAlias('lost_gamma_0', 'daughter(1, daughter(0, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_0', 'daughter(1, daughter(0, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_0', 'daughter(1, daughter(0, genNMissingDaughter(321)))')
 
+copyParticles('K_S0:good','K_S0:mdst',path=path)
+applyCuts('K_S0:good','extraInfo(ksnbStandard) == 1',path=path)
+reconstructDecay('Upsilon(5S):Ks -> B_s0:generic K_S0:good',' ',path=path)
+
+vm.addAlias('N_KS','nParticlesInList(Upsilon(5S):Ks)')
+
 vm.addAlias('lost_nu_1', 'formula(daughter(1, daughter(1, genNMissingDaughter(12))) + daughter(1, daughter(1, genNMissingDaughter(14))) + daughter(1, daughter(1, genNMissingDaughter(16))))')
 vm.addAlias('Miss_id_1', 'daughter(1, daughter(1, isSignalAcceptMissing))')
 vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
