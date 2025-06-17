@@ -141,15 +141,24 @@ applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
 
 from variables import variables as vm
 
+#Beam
 vm.addAlias('pcm','useCMSFrame(p)')
+vm.addAlias('ecm','useCMSFrame(E)')
+vm.addAlias('missedE', 'formula(Ecms - useCMSFrame(E))')
+vm.addAlias('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
+
+#Ups
+vm.addAlias('pmiss','missingMomentumOfEvent')
+vm.addAlias('thetamiss','missingMomentumOfEventCMS_theta')
+vm.addAlias('fox','foxWolframR2')
+
+#Bs_tag
 vm.addAlias('p0','daughter(0,useCMSFrame(p))')
 vm.addAlias('theta_Bs','daughter(0,useCMSFrame(cosTheta))')
 vm.addAlias('M0','daughter(0,M)')
-vm.addAlias('missedE', 'formula(Ecms - useCMSFrame(E))')
+vm.addAlias('recM2_Bs', 'formula((beamE - daughter(0,E))**2 - (beamPx - daughter(0,px))**2 - (beamPy - daughter(0,py))**2 - (beamPz - daughter(0,pz))**2)')
 
-vm.addAlias('ecm','useCMSFrame(E)')
 
-vm.addAlias('recM2', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
 vm.addAlias('idec0', 'daughter(1, daughter(0, extraInfo(decayModeID)))')
 vm.addAlias('idec1', 'daughter(1, daughter(1, extraInfo(decayModeID)))')
 vm.addAlias('is0', 'daughter(0, isSignal)')
@@ -175,6 +184,13 @@ vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
 vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
 vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
 vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
+
+copyParticles('K_S0:good','K_S0:mdst',path=path)
+applyCuts('K_S0:good','extraInfo(ksnbStandard) == 1',path=path)
+reconstructDecay('Upsilon(5S):Ks -> B_s0:generic K_S0:good',' ',path=path)
+
+vm.addAlias('N_KS','nParticlesInList(Upsilon(5S):Ks)')
+
 
 
 values = []
@@ -211,7 +227,7 @@ for tau_ind in [0, 1]:
 variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        'missedE','M0', 'p0', 'recM2'] + values,
+                                        'missedE','M0', 'p0', 'recM2', 'N_KS'] + values,
                      treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
