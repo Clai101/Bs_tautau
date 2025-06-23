@@ -224,11 +224,11 @@ for tau_ind in [0, 1]:
             values.append(alias_name)
             vm.addAlias(alias_name, expr)
 
-variablesToNtuple('Upsilon(5S):alle', ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
-                                       'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
-                                       'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        'missedE','M0', 'p0', 'recM2_Ups', 'recM2_Bs', 'N_KS'] + values,
-                     treename='Y5S', filename=output_file, path=path)
+variablesToNtuple('Upsilon(5S):alle',   ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
+                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
+                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
+                                        'missedE','M0', 'p0', 'pmiss', 'thetamiss', 'fox', 'theta_Bs', 'recM2_Ups',  'recM2_Bs', 'N_KS'] + values,
+                                        treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)
