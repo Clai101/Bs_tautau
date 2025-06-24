@@ -199,6 +199,8 @@ for tau_index in [0, 1]:
     alias_name = f'theta_tau_{tau_index}'
     daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(cosTheta)))'
     vm.addAlias(alias_name, daughter_path)
+    values.append(alias_name)
+    
     alias_name = f'p_tau_{tau_index}'
     daughter_path = f'daughter(1, daughter({tau_index}, p))'
     vm.addAlias(alias_name, daughter_path)
