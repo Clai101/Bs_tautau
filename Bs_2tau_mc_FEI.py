@@ -131,12 +131,12 @@ reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tauonic', '', 2, path
 copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=path)
 
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
+buildEventKinematics(inputListNames='Upsilon(5S):alle', path=path)
 
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
 
 copyList('K_L0:alle','K_L0:mdst',path=path)
 applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
-
 
 
 from variables import variables as vm
@@ -149,7 +149,7 @@ vm.addAlias('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - 
 
 #Ups
 vm.addAlias('pmiss','missingMomentumOfEvent')
-vm.addAlias('thetamiss','missingMomentumOfEventCMS_theta')
+vm.addAlias('thetamiss','missingMomentumOfEvent_theta')
 vm.addAlias('fox','foxWolframR2')
 
 #Bs_tag
