@@ -18,7 +18,6 @@ import ROOT
 import vertex
 import fei
 from ROOT import Belle2
-
 Lamc_m = 2.28646
 Lamc_25_m = 2.5925
 Lamc_26_m = 2.628
@@ -132,6 +131,7 @@ copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=pa
 
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
 buildEventKinematics(inputListNames='Upsilon(5S):alle', path=path)
+buildEventShape(inputListNames='Upsilon(5S):alle', path=path)
 
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
 
