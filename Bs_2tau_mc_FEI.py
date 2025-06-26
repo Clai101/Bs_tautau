@@ -130,8 +130,7 @@ reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tauonic', '', 2, path
 copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=path)
 
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
-buildEventKinematics(inputListNames='Upsilon(5S):alle', path=path)
-buildEventShape(inputListNames='Upsilon(5S):alle', path=path)
+buildEventShape(path=path)
 
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
 
@@ -148,9 +147,16 @@ vm.addAlias('missedE', 'formula(Ecms - useCMSFrame(E))')
 vm.addAlias('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
 
 #Ups
-vm.addAlias('pmiss','missingMomentumOfEvent')
-vm.addAlias('thetamiss','missingMomentumOfEvent_theta')
+vm.addAlias('pmiss','formula(((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
+vm.addAlias('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
 vm.addAlias('fox','foxWolframR2')
+vm.addAlias('asymmetry', '''formula( 
+            (
+                daughter(1, daughter(0, daughter(0, dz))) - daughter(1, daughter(0, daughter(1, dz)))
+            ) / (
+                daughter(1, daughter(0, daughter(0, dz))) + daughter(1, daughter(0, daughter(1, dz)))
+            ) 
+            )''')
 
 #Bs_tag
 vm.addAlias('p0','daughter(0,useCMSFrame(p))')
