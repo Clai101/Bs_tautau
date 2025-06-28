@@ -11,7 +11,7 @@ STREAM=1
 
 WORkCODE="Bs_2tau_mc_FEI.py" 
 absolute_path="$(pwd)/${WORkCODE}"
-OUTPUT_FILE="mc"
+OUTPUT_FILE="mc_gen"
 
 URL="http://bweb3/montecarlo.php?ex=${EXPERIMENT}&rs=${RUN_START}&re=${RUN_END}&ty=${TY}&dt=${DATA_TYPE}&bl=caseB&dv=zfserv&st=${STREAM}"
 
