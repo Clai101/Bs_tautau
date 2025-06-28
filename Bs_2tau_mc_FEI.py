@@ -140,17 +140,27 @@ applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
 
 from variables import variables as vm
 
+__Alias_names = list()
+
+def add_aliases(*args, **kwargs):
+    global __Alias_names
+    if args:
+        __Alias_names.append(args[0])
+    else:
+        raise ValueError("No alias name provided")
+    vm.addAlias(*args, **kwargs)
+
 #Beam
-vm.addAlias('pcm','useCMSFrame(p)')
-vm.addAlias('ecm','useCMSFrame(E)')
-vm.addAlias('missedE', 'formula(Ecms - useCMSFrame(E))')
-vm.addAlias('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
+add_aliases('pcm','useCMSFrame(p)')
+add_aliases('ecm','useCMSFrame(E)')
+add_aliases('missedE', 'formula(Ecms - useCMSFrame(E))')
+add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
 
 #Ups
-vm.addAlias('pmiss','formula(((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
-vm.addAlias('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
-vm.addAlias('fox','foxWolframR2')
-vm.addAlias('asymmetry', '''formula( 
+add_aliases('pmiss','formula(((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
+add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
+add_aliases('fox','foxWolframR2')
+add_aliases('asymmetry', '''formula( 
             (
                 daughter(1, daughter(0, daughter(0, dz))) - daughter(1, daughter(0, daughter(1, dz)))
             ) / (
@@ -159,84 +169,77 @@ vm.addAlias('asymmetry', '''formula(
             )''')
 
 #Bs_tag
-vm.addAlias('p0','daughter(0,useCMSFrame(p))')
-vm.addAlias('theta_Bs','daughter(0,useCMSFrame(cosTheta))')
-vm.addAlias('M0','daughter(0,M)')
-vm.addAlias('recM2_Bs', 'formula((beamE - daughter(0,E))**2 - (beamPx - daughter(0,px))**2 - (beamPy - daughter(0,py))**2 - (beamPz - daughter(0,pz))**2)')
+add_aliases('p0','daughter(0,useCMSFrame(p))')
+add_aliases('theta_Bs','daughter(0,useCMSFrame(cosTheta))')
+add_aliases('M0','daughter(0,M)')
+add_aliases('recM2_Bs', 'formula((beamE - daughter(0,E))**2 - (beamPx - daughter(0,px))**2 - (beamPy - daughter(0,py))**2 - (beamPz - daughter(0,pz))**2)')
 
 
-vm.addAlias('idec0', 'daughter(1, daughter(0, extraInfo(decayModeID)))')
-vm.addAlias('idec1', 'daughter(1, daughter(1, extraInfo(decayModeID)))')
-vm.addAlias('is0', 'daughter(0, isSignal)')
-vm.addAlias('N_KL', 'nParticlesInList(K_L0:alle)')
+add_aliases('idec0', 'daughter(1, daughter(0, extraInfo(decayModeID)))')
+add_aliases('idec1', 'daughter(1, daughter(1, extraInfo(decayModeID)))')
+add_aliases('is0', 'daughter(0, isSignal)')
+add_aliases('N_KL', 'nParticlesInList(K_L0:alle)')
 
-vm.addAlias('lost_nu_0', '''formula(
+add_aliases('lost_nu_0', '''formula(
             daughter(1, daughter(0, genNMissingDaughter(12))) + 
             daughter(1, daughter(0, genNMissingDaughter(14))) + 
             daughter(1, daughter(0, genNMissingDaughter(16)))
             )''')
-vm.addAlias('Miss_id_0', 'daughter(1, daughter(0, isSignalAcceptMissing))')
-vm.addAlias('lost_gamma_0', 'daughter(1, daughter(0, genNMissingDaughter(22)))')
-vm.addAlias('lost_pi_0', 'daughter(1, daughter(0, genNMissingDaughter(211)))')
-vm.addAlias('lost_K_0', 'daughter(1, daughter(0, genNMissingDaughter(321)))')
+add_aliases('Miss_id_0', 'daughter(1, daughter(0, isSignalAcceptMissing))')
+add_aliases('lost_gamma_0', 'daughter(1, daughter(0, genNMissingDaughter(22)))')
+add_aliases('lost_pi_0', 'daughter(1, daughter(0, genNMissingDaughter(211)))')
+add_aliases('lost_K_0', 'daughter(1, daughter(0, genNMissingDaughter(321)))')
 
-vm.addAlias('lost_nu_1', '''formula(
+add_aliases('lost_nu_1', '''formula(
             daughter(1, daughter(1, genNMissingDaughter(12))) + 
             daughter(1, daughter(1, genNMissingDaughter(14))) + 
             daughter(1, daughter(1, genNMissingDaughter(16)))
             )''')
-vm.addAlias('Miss_id_1', 'daughter(1, daughter(1, isSignalAcceptMissing))')
-vm.addAlias('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
-vm.addAlias('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
-vm.addAlias('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
-vm.addAlias('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
+add_aliases('Miss_id_1', 'daughter(1, daughter(1, isSignalAcceptMissing))')
+add_aliases('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
+add_aliases('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
+add_aliases('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
+add_aliases('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
 
 copyParticles('K_S0:good','K_S0:mdst',path=path)
 applyCuts('K_S0:good','extraInfo(ksnbStandard) == 1',path=path)
 reconstructDecay('Upsilon(5S):Ks -> B_s0:generic K_S0:good',' ',path=path)
 
-vm.addAlias('N_KS','nParticlesInList(Upsilon(5S):Ks)')
+add_aliases('N_KS','nParticlesInList(Upsilon(5S):Ks)')
 
-
-
-values = []
 
 for tau_index in [0, 1]: 
     alias_name = f'theta_tau_{tau_index}'
     daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(cosTheta)))'
-    vm.addAlias(alias_name, daughter_path)
-    values.append(alias_name)
+    add_aliases(alias_name, daughter_path)
+    __Alias_names.append(alias_name)
     
     alias_name = f'p_tau_{tau_index}'
     daughter_path = f'daughter(1, daughter({tau_index}, p))'
-    vm.addAlias(alias_name, daughter_path)
-    values.append(alias_name)
+    add_aliases(alias_name, daughter_path)
+    __Alias_names.append(alias_name)
 
 for tau_index in [0, 1]: 
     alias_name = f'tau_d_{tau_index}_0'
     daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, M)))'
-    vm.addAlias(alias_name, daughter_path)
-    values.append(alias_name)
+    add_aliases(alias_name, daughter_path)
+    __Alias_names.append(alias_name)
 
 for tau_index in [0, 1]:
-    vm.addAlias(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
-    vm.addAlias(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
-    values.append(f'tau_last_z_{tau_index}')
-    values.append(f'tau_last_r_{tau_index}')
+    add_aliases(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
+    add_aliases(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
+    __Alias_names.append(f'tau_last_z_{tau_index}')
+    __Alias_names.append(f'tau_last_r_{tau_index}')
 
 for tau_ind in [0, 1]:
     for hypo1 in [0, 1, 2, 4]:  
         for hypo2 in [0, 1, 2, 4]:  
             expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2}))))'
             alias_name = f'PID_{hypo1}_vs_{hypo2}_tau{tau_ind}'
-            values.append(alias_name)
-            vm.addAlias(alias_name, expr)
+            __Alias_names.append(alias_name)
+            add_aliases(alias_name, expr)
 
-variablesToNtuple('Upsilon(5S):alle',   ['N_KL', 'idec0', 'idec1', 'totalEnergyMC', 'E_gamma_in_ROE', 
-                                        'N_tracks_in_ROE', 'Bs_lik', 'is0', 'lost_nu_0', 'lost_gamma_0', 'lost_pi_0', 'lost_K_0', 
-                                        'Miss_id_0', 'lost_nu_1', 'lost_gamma_1', 'lost_pi_1', 'lost_K_1', 'Miss_id_1',
-                                        'missedE','M0', 'p0', 'pmiss', 'thetamiss', 'fox', 'theta_Bs', 'recM2_Ups',  'recM2_Bs', 'N_KS'] + values,
-                                        treename='Y5S', filename=output_file, path=path)
+variablesToNtuple('Upsilon(5S):alle', __Alias_names, treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)
