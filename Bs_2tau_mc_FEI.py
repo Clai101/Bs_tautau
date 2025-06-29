@@ -239,7 +239,7 @@ for tau_ind in [0, 1]:
             __Alias_names.append(alias_name)
             add_aliases(alias_name, expr)
 
-variablesToNtuple('Upsilon(5S):alle', __Alias_names, treename='Y5S', filename=output_file, path=path)
+variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events
 print(path)
