@@ -157,14 +157,14 @@ add_aliases('missedE', 'formula(Ecms - useCMSFrame(E))')
 add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
 
 #Ups
-add_aliases('pmiss','formula(((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
-add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)**0.5)')
+add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
+add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
 add_aliases('fox','foxWolframR2')
 add_aliases('asymmetry', '''formula( 
             (
-                daughter(1, daughter(0, daughter(0, dz))) - daughter(1, daughter(0, daughter(1, dz)))
+                daughter(1, daughter(0, daughter(0, pz))) - daughter(1, daughter(0, daughter(1, pz)))
             ) / (
-                daughter(1, daughter(0, daughter(0, dz))) + daughter(1, daughter(0, daughter(1, dz)))
+                daughter(1, daughter(0, daughter(0, pz))) + daughter(1, daughter(0, daughter(1, pz)))
             ) 
             )''')
 
