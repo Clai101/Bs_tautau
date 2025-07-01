@@ -2,6 +2,7 @@
 
 TY=$1
 STREAM=$2
+TIME=$3
 
 
 ./rec_skim.sh 69 1020 1020 ${TY} 5S_onresonance ${STREAM} ${TIME}
