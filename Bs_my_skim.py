@@ -243,7 +243,9 @@ for tau_ind in [0, 1]:
 
 applyCuts('Upsilon(5S):alle', '[[[idec0 == 1] or [idec0 == 0]] and [[idec1 == 1] or [idec1 == 0]] and [is0 == 1] and [E_gamma_in_ROE < 0.02]]', path=path)
 
-variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
+
+from variables.MCGenTopo import mc_gen_topo
+variablesToNtuple('', mc_gen_topo(200), 'MCGenTopo', output_file, path=path)
 
 
 #Process 1000 events
