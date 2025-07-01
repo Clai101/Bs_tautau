@@ -257,6 +257,6 @@ b2.process(path)
 print(b2.statistics)
 
 # Invoke the TopoAna program
-os.system('/gpfs/home/belle2/matrk/TopoAna/topoana-master/bin/topoana.exe topoana.card')
+os.system('/gpfs/home/belle2/matrk/TopoAna/topoana-master/bin/topoana.exe /gpfs/home/belle2/matrk/TopoAna/topoana-master/test/topoana.card')
 
 print(b2.statistics)
