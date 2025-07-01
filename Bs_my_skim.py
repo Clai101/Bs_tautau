@@ -245,7 +245,7 @@ applyCuts('Upsilon(5S):alle', '[[[idec0 == 1] or [idec0 == 0]] and [[idec1 == 1]
 
 
 from variables.MCGenTopo import mc_gen_topo
-variablesToNtuple('', mc_gen_topo(200), 'MCGenTopo', output_file, path=path)
+variablesToNtuple('', mc_gen_topo(20000), 'MCGenTopo', output_file, path=path)
 
 
 #Process 1000 events
