@@ -93,27 +93,6 @@ applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 copyLists('B_s0:alle',['B_s0:generic', ], path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:alle', looseMCMatching=True)
 
-
-
-def get_event_info_from_particle(particle):
-    """Возвращает (exp, run, evt) для данной частицы"""
-    # Получаем EventMetaData из объекта события
-    event_metadata = Belle2.EventMetaData()
-    if not b2.retrieve(event_metadata):
-        raise RuntimeError("EventMetaData not found in current event.")
-    
-    exp = event_metadata.getExperiment()
-    run = event_metadata.getRun()
-    evt = event_metadata.getEvent()
-    return (exp, run, evt)
-
-particles = b2.get('Particle', 'B_s0:alle')
-for p in particles:
-    exp, run, evt = get_event_info_from_particle(p)
-    print(f"🔹 Particle {p.getPDG()} принадлежит: Exp {exp}, Run {run}, Event {evt}")
-
-
-
 # Part 2
 
 #FSP +
@@ -180,6 +159,98 @@ add_aliases('ecm','useCMSFrame(E)')
 add_aliases('missedE', 'formula(Ecms - useCMSFrame(E))')
 add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
 
+#Ups
+add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
+add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
+add_aliases('fox','foxWolframR2')
+add_aliases('asymmetry', '''formula( 
+            (
+                daughter(1, daughter(0, daughter(0, pz))) - daughter(1, daughter(0, daughter(1, pz)))
+            ) / (
+                daughter(1, daughter(0, daughter(0, pz))) + daughter(1, daughter(0, daughter(1, pz)))
+            ) 
+            )''')
+
+#Bs_tag
+add_aliases('p0','daughter(0,useCMSFrame(p))')
+add_aliases('theta_Bs','daughter(0,useCMSFrame(cosTheta))')
+add_aliases('M0','daughter(0,M)')
+add_aliases('recM2_Bs', 'formula((beamE - daughter(0,E))**2 - (beamPx - daughter(0,px))**2 - (beamPy - daughter(0,py))**2 - (beamPz - daughter(0,pz))**2)')
+
+
+add_aliases('idec0', 'daughter(1, daughter(0, extraInfo(decayModeID)))')
+add_aliases('idec1', 'daughter(1, daughter(1, extraInfo(decayModeID)))')
+add_aliases('is0', 'daughter(0, isSignal)')
+add_aliases('N_KL', 'nParticlesInList(K_L0:alle)')
+
+add_aliases('lost_nu_0', '''formula(
+            daughter(1, daughter(0, genNMissingDaughter(12))) + 
+            daughter(1, daughter(0, genNMissingDaughter(14))) + 
+            daughter(1, daughter(0, genNMissingDaughter(16)))
+            )''')
+add_aliases('Miss_id_0', 'daughter(1, daughter(0, isSignalAcceptMissing))')
+add_aliases('lost_gamma_0', 'daughter(1, daughter(0, genNMissingDaughter(22)))')
+add_aliases('lost_pi_0', 'daughter(1, daughter(0, genNMissingDaughter(211)))')
+add_aliases('lost_K_0', 'daughter(1, daughter(0, genNMissingDaughter(321)))')
+
+add_aliases('lost_nu_1', '''formula(
+            daughter(1, daughter(1, genNMissingDaughter(12))) + 
+            daughter(1, daughter(1, genNMissingDaughter(14))) + 
+            daughter(1, daughter(1, genNMissingDaughter(16)))
+            )''')
+add_aliases('Miss_id_1', 'daughter(1, daughter(1, isSignalAcceptMissing))')
+add_aliases('lost_gamma_1', 'daughter(1, daughter(1, genNMissingDaughter(22)))')
+add_aliases('lost_pi_1', 'daughter(1, daughter(1, genNMissingDaughter(211)))')
+add_aliases('lost_K_1', 'daughter(1, daughter(1, genNMissingDaughter(321)))')
+add_aliases('Bs_lik', 'daughter(0, extraInfo(SignalProbability))')
+
+copyParticles('K_S0:good','K_S0:mdst',path=path)
+applyCuts('K_S0:good','extraInfo(ksnbStandard) == 1',path=path)
+reconstructDecay('Upsilon(5S):Ks -> B_s0:generic K_S0:good',' ',path=path)
+
+add_aliases('N_KS','nParticlesInList(Upsilon(5S):Ks)')
+
+for tau_index in [0, 1]: 
+    alias_name = f'theta_tau_{tau_index}'
+    daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(cosTheta)))'
+    add_aliases(alias_name, daughter_path)
+    __Alias_names.append(alias_name)
+    
+    alias_name = f'p_tau_{tau_index}'
+    daughter_path = f'daughter(1, daughter({tau_index}, p))'
+    add_aliases(alias_name, daughter_path)
+    __Alias_names.append(alias_name)
+
+for tau_index in [0, 1]: 
+    alias_name = f'tau_d_{tau_index}_0'
+    daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, M)))'
+    add_aliases(alias_name, daughter_path)
+    __Alias_names.append(alias_name)
+
+for tau_index in [0, 1]:
+    add_aliases(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
+    add_aliases(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
+    __Alias_names.append(f'tau_last_z_{tau_index}')
+    __Alias_names.append(f'tau_last_r_{tau_index}')
+
+for tau_ind in [0, 1]:
+    for hypo1 in [0, 1, 2, 4]:  
+        for hypo2 in [0, 1, 2, 4]:  
+            expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2}))))'
+            alias_name = f'PID_{hypo1}_vs_{hypo2}_tau{tau_ind}'
+            __Alias_names.append(alias_name)
+            add_aliases(alias_name, expr)
+
+applyCuts('Upsilon(5S):alle', '''
+            (
+            ((idec0 == 1) | (idec0 == 0))
+            & 
+            ((idec1 == 1) | (idec1 == 0))
+            &
+            (is0 == 1)
+            &
+            (E_gamma_in_ROE < 0.02)
+            )''')
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
