@@ -252,4 +252,11 @@ variablesToNtuple('', mc_gen_topo(200), 'MCGenTopo', output_file, path=path)
 print(path)
 #b2.process(path, max_event=100000)
 b2.process(path)
+
+# Print out the summary
+print(b2.statistics)
+
+# Invoke the TopoAna program
+os.system('/gpfs/home/belle2/matrk/TopoAna/topoana-master/bin/topoana.exe topoana.card')
+
 print(b2.statistics)
