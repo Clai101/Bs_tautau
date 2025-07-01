@@ -14,6 +14,7 @@ import os
 import basf2 as b2
 from modularAnalysis import *
 import b2biiConversion
+import mdst
 import ROOT
 import vertex
 import fei
@@ -243,6 +244,7 @@ for tau_ind in [0, 1]:
 
 applyCuts('Upsilon(5S):alle', '[[[idec0 == 1] or [idec0 == 0]] and [[idec1 == 1] or [idec1 == 0]] and [is0 == 1] and [E_gamma_in_ROE < 0.02]]', path=path)
 
+mdst.add_mdst_output(filename = 'MCPrint_'+output_file, path=path)
 
 from variables.MCGenTopo import mc_gen_topo
 variablesToNtuple('Upsilon(5S):alle', mc_gen_topo(20000), 'MCGenTopo', output_file, path=path)
