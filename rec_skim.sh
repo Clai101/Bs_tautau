@@ -7,7 +7,7 @@ DATA_TYPE=$5
 STREAM=$6
 TIME=$7
 
-WORKDIR=/group/belle2/users2022/matrk/Gen_mc/mc_${EXPERIMENT}_${RUN_START}_${RUN_END}_${TY}_${DATA_TYPE}_${STREAM}
+WORKDIR=/group/belle2/users2022/matrk/B_Dlnu/mc_${EXPERIMENT}_${RUN_START}_${RUN_END}_${TY}_${DATA_TYPE}_${STREAM}
 WORkCODE="Bs_my_skim.py" 
 absolute_path="$(pwd)/${WORkCODE}"
 OUTPUT_FILE="mc"
