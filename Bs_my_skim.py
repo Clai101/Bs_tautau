@@ -243,12 +243,12 @@ for tau_ind in [0, 1]:
 
 applyCuts('Upsilon(5S):alle', '''
             (
-            ((idec0 = 1) | (idec0 = 0))
-            & 
-            ((idec1 = 1) | (idec1 = 0))
-            &
+            ((idec0 == 1) or (idec0 == 0))
+            and
+            ((idec1 == 1) | (idec1 == 0))
+            and
             (is0 = 1)
-            &
+            and
             (E_gamma_in_ROE < 0.02)
             )''', path=path)
 
