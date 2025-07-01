@@ -241,7 +241,7 @@ for tau_ind in [0, 1]:
             __Alias_names.append(alias_name)
             add_aliases(alias_name, expr)
 
-applyCuts('Upsilon(5S):alle', '(((idec0 = 1) or (idec0 = 0)) and ((idec1 = 1) or (idec1 = 0)) and (is0 = 1) and (E_gamma_in_ROE < 0.02))', path=path)
+applyCuts('Upsilon(5S):alle', '[[[idec0 == 1] or [idec0 == 0]] and [[idec1 == 1] or [idec1 == 0]] and [is0 == 1] and [E_gamma_in_ROE < 0.02]]', path=path)
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
