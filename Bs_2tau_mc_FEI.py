@@ -162,9 +162,9 @@ add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - p
 add_aliases('fox','foxWolframR2')
 add_aliases('asymmetry', '''formula( 
             (
-                daughter(1, daughter(0, daughter(0, pz))) - daughter(1, daughter(0, daughter(1, pz)))
+                daughter(1, daughter(0, pz)) - daughter(1, daughter(1, pz))
             ) / (
-                daughter(1, daughter(0, daughter(0, pz))) + daughter(1, daughter(0, daughter(1, pz)))
+                daughter(1, daughter(0, pz)) + daughter(1, daughter(1, pz))
             ) 
             )''')
 
