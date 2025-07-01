@@ -250,7 +250,7 @@ applyCuts('Upsilon(5S):alle', '''
             (is0 == 1)
             &
             (E_gamma_in_ROE < 0.02)
-            )''')
+            )''', path=path)
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
