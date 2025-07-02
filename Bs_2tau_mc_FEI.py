@@ -238,8 +238,8 @@ for tau_ind in [0, 1]:
             __Alias_names.append(alias_name)
             add_aliases(alias_name, expr)
 
-add_aliases('Istau0', 'daughter(1, daughter(0, isSignal))')
-add_aliases('Istau1', 'daughter(1, daughter(1, isSignal))')
+add_aliases('Istau0', 'daughter(1, daughter(0, daughter(0, isSignal)))')
+add_aliases('Istau1', 'daughter(1, daughter(1, daughter(0, isSignal)))')
 
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
