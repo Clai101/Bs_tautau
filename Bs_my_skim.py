@@ -243,7 +243,7 @@ for tau_ind in [0, 1]:
 
 applyCuts('Upsilon(5S):alle', '[[[idec0 == 1] or [idec0 == 0]] and [[idec1 == 1] or [idec1 == 0]] and [is0 == 1] and [E_gamma_in_ROE < 0.02]]', path=path)
 
-applyEventCut('nParticlesInList(Upsilon(5S):alle) > 0')
+applyEventCuts('nParticlesInList(Upsilon(5S):alle) > 0')
 
 mdst.add_mdst_output(filename = 'MCPrint_'+output_file, path=path)
 
