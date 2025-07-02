@@ -8,7 +8,7 @@ STREAM=$6
 TIME=$7
 
 WORKDIR=/group/belle2/users2022/matrk/B_Dlnu/mc_${EXPERIMENT}_${RUN_START}_${RUN_END}_${TY}_${DATA_TYPE}_${STREAM}
-WORkCODE="Bs_2tau_mc_FEI.py" 
+WORkCODE="Bs_my_skim.py" 
 absolute_path="$(pwd)/${WORkCODE}"
 OUTPUT_FILE="mc"
 
