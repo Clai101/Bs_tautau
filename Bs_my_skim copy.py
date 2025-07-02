@@ -14,10 +14,13 @@ import os
 import basf2 as b2
 from modularAnalysis import *
 import b2biiConversion
+import mdst
 import ROOT
 import vertex
 import fei
 from ROOT import Belle2
+
+
 Lamc_m = 2.28646
 Lamc_25_m = 2.5925
 Lamc_26_m = 2.628
@@ -61,8 +64,7 @@ if skim_id == "Sig_mc":
 
 os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
-setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
-
+setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)    
 
 #Fei
 
@@ -138,6 +140,8 @@ copyList('K_L0:alle','K_L0:mdst',path=path)
 applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
 
 
+
+
 from variables import variables as vm
 
 __Alias_names = list()
@@ -157,14 +161,15 @@ add_aliases('missedE', 'formula(Ecms - useCMSFrame(E))')
 add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
 
 #Ups
-add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
+add_aliases('pmiss','formula(((beamPx - px)*v*2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
 add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
 add_aliases('fox','foxWolframR2')
 add_aliases('asymmetry', '''formula( 
             (
-                daughter(1, daughter(0, pz)) - daughter(1, daughter(1, pz))
+                daughter(1, daughter(0, daughter(0, pz))) - daughter(1, daughter(1, daughter(1, pz)))
             ) / (
-                daughter(1, daughter(0, pz)) + daughter(1, daughter(1, pz))
+                daughter(1, daughter(0, daughter(0, pz))) + daughter(1, daughter(1, daughter(1, pz)))
+            ) 
             ) 
             )''')
 
@@ -238,10 +243,24 @@ for tau_ind in [0, 1]:
             __Alias_names.append(alias_name)
             add_aliases(alias_name, expr)
 
-variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
+applyCuts('Upsilon(5S):alle', '[[[idec0 == 1] or [idec0 == 0]] and [[idec1 == 1] or [idec1 == 0]] and [is0 == 1] and [E_gamma_in_ROE < 0.02]]', path=path)
+
+mdst.add_mdst_output(filename = 'MCPrint_'+output_file, path=path)
+
+
+from variables.MCGenTopo import mc_gen_topo
+add_module('Upsilon(5S):alle', mc_gen_topo(20000), 'MCGenTopo', output_file, path=path)
+
 
 #Process 1000 events
 print(path)
 #b2.process(path, max_event=100000)
 b2.process(path)
+
+# Print out the summary
+print(b2.statistics)
+
+# Invoke the TopoAna program
+os.system('/gpfs/home/belle2/matrk/TopoAna/topoana-master/bin/topoana.exe /gpfs/home/belle2/matrk/TopoAna/topoana-master/test/topoana.card')
+
 print(b2.statistics)

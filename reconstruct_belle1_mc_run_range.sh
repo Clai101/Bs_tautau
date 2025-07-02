@@ -21,4 +21,3 @@ cd ${WORKDIR}
 echo "basf2 -l error $absolute_path \"${URL}\" ${OUTPUT_FILE}.root ${TY}_${STREAM} &> ${OUTPUT_FILE}.log" > job_script
 chmod 755 job_script
 bsub -q ${TIME} ./job_script
-_prod00024786_task10020000
