@@ -121,6 +121,8 @@ for i, dec in enumerate(tau_dec):
 copyLists('tau+:alle',[f"tau+:{int(i)}" for i in range(len(tau_dec))], path=path)
 path.add_module('MCMatcherParticles', listName='tau+:alle', looseMCMatching=True)
 
+vertex.kFit('tau+:alle', conf_level = -1, fit_type='vertex', daughtersUpdate=False, constraint = 'iptube', path=path)
+
 reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, ignoreIfTooManyCandidates = False, path=path)
 reconstructDecay('B_s0:tau -> tau+:alle', '', 2, ignoreIfTooManyCandidates = False, allowChargeViolation = True, path=path)
 copyLists('B_s0:tauonic',['B_s0:tautau', 'B_s0:tau'], path=path)
@@ -240,6 +242,8 @@ for tau_ind in [0, 1]:
 
 add_aliases('Istau0', 'daughter(1, daughter(0, daughter(0, isSignal)))')
 add_aliases('Istau1', 'daughter(1, daughter(1, daughter(0, isSignal)))')
+add_aliases('Chi_sq_0', 'daughter(1, daughter(0, chiProb))')
+add_aliases('Chi_sq_1', 'daughter(1, daughter(1, chiProb))')
 
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)

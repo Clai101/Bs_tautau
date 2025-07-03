@@ -249,7 +249,7 @@ mdst.add_mdst_output(filename = 'MCPrint_'+output_file, path=path)
 
 
 from variables.MCGenTopo import mc_gen_topo
-variablesToNtuple('Upsilon(5S):alle', mc_gen_topo(20000), 'MCGenTopo', output_file, path=path)
+add_module('Upsilon(5S):alle', mc_gen_topo(20000), 'MCGenTopo', output_file, path=path)
 
 
 #Process 1000 events
