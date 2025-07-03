@@ -216,7 +216,7 @@ for tau_index in [0, 1]:
     __Alias_names.append(alias_name)
     
     alias_name = f'p_tau_{tau_index}'
-    daughter_path = f'daughter(1, daughter({tau_index}, p))'
+    daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(p)))'
     add_aliases(alias_name, daughter_path)
     __Alias_names.append(alias_name)
 
