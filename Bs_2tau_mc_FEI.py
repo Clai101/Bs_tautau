@@ -244,6 +244,9 @@ add_aliases('Istau0', 'daughter(1, daughter(0, daughter(0, isSignal)))')
 add_aliases('Istau1', 'daughter(1, daughter(1, daughter(0, isSignal)))')
 add_aliases('Chi_sq_0', 'daughter(1, daughter(0, chiProb))')
 add_aliases('Chi_sq_1', 'daughter(1, daughter(1, chiProb))')
+add_aliases('dr0', 'daughter(1, daughter(0, dr))')
+add_aliases('dr1', 'daughter(1, daughter(1, dr))')
+
 
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
