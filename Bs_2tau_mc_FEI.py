@@ -163,7 +163,8 @@ add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz
 add_aliases('cmpmiss','formula(((useCMSFrame(px))**2 + (useCMSFrame(py))**2 + (useCMSFrame(pz))**2)**0.5)')
 add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
 add_aliases('cmthetamiss','formula((useCMSFrame(pz)) / ((useCMSFrame(px))**2 + (useCMSFrame(py))**2 + (useCMSFrame(pz))**2)**0.5)')
-add_aliases('fox','useCMSFrame(foxWolframR2)')
+add_aliases('cmfox','useCMSFrame(foxWolframR2)')
+add_aliases('fox','foxWolframR2')
 add_aliases('asymmetry', '''formula( 
             (
                 daughter(1, daughter(0, useCMSFrame(pz))) - daughter(1, daughter(1, useCMSFrame(pz)))
