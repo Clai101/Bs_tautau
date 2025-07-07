@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="/home/belle2/matrk/Extend/gsim_out/mdst/evtgen_exp_67_bszerotautau-206.mdst"
+file="/home/belle2/matrk/Extend/gsim_out/mdst/bszerotautau/evtgen_exp_69_bszerotautau-148.mdst"
 
 
 OUTPUT_FILE="mc_sig.root"
