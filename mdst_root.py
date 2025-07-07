@@ -12,6 +12,7 @@ import sys
 import os
 
 import basf2 as b2
+from basf2 import *
 from modularAnalysis import *
 import b2biiConversion
 import mdst
@@ -38,6 +39,8 @@ b2.register_module("EnableMyVariable")
 b2.register_module("EnableMyMetaVariable")
 b2.register_module("SkimFiles")
 
+path.add_module("ProgressBar")
+
 if skim_id == "Sig_mc":
     if ('evtgen_exp_53' in input_file):
         b2.conditions.prepend_testing_payloads('/home/belle/yasaveev/bb/bin/53_localdb/database.txt')
@@ -49,6 +52,6 @@ setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 mdst.add_mdst_output(path, mc=True, filename="mdst.root")
 mdst.add_udst_output(path, output_file="udst.root", mc=True)
 
+path.add_module("EventDisplay", {"filename": "event_display.root","displayTracks": True,"displayClusters": True,"displayMCParticles": True})
 
-
-
+b2.process(path)
