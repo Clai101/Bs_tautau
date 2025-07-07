@@ -46,9 +46,7 @@ os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
-
-
-mdst.add_mdst_output(path, mc=True, filename=output_file)
+mdst.add_mdst_output(path=path, mc=True, filename=output_file)
 
 
 
