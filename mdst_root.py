@@ -50,7 +50,6 @@ b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
 mdst.add_mdst_output(path, mc=True, filename="mdst.root")
-mdst.add_udst_output(path, output_file="udst.root", mc=True)
 
 path.add_module("EventDisplay", {"filename": "event_display.root","displayTracks": True,"displayClusters": True,"displayMCParticles": True})
 
