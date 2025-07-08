@@ -87,6 +87,10 @@ path.add_path(feistate.path)
 
 rankByHighest('B_s0:generic', 'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
+
+applyCuts('B_s0:generic', 'formula(abs(useCMSFrame(p) - 0.47) < 0.1)', path=path)
+applyCuts('B_s0:generic', 'extraInfo(SignalProbability) > 0.0012', path=path)
+
 applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
 
 #Part 1
@@ -113,10 +117,11 @@ fillParticleList('e+:alle','abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path =
 fillParticleList('mu+:alle','abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
 
 
-reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
-copyLists('rho+:alle',['rho+:1', ], path=path)
+#reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
+#copyLists('rho+:alle',['rho+:1', ], path=path)
 
-tau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
+#tau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
+tau_dec = ["e+:alle", "mu+:alle"]
 
 for i, dec in enumerate(tau_dec):
     reconstructDecay(f'tau+:{int(i)} -> {dec}', '', int(i), path=path)
@@ -135,13 +140,13 @@ reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tauonic', '', 2, path
 copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=path)
 
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
+applyCuts('Upsilon(5S):alle', 'E_gamma_in_ROE < 1.2', path=path)
 buildEventShape(path=path)
 
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
 
 copyList('K_L0:alle','K_L0:mdst',path=path)
 applyCuts('K_L0:alle','klmClusterBelleTrackFlag == 0',path=path)
-
 
 from variables import variables as vm
 
@@ -252,8 +257,6 @@ add_aliases('Chi_sq_0', 'daughter(1, daughter(0, chiProb))')
 add_aliases('Chi_sq_1', 'daughter(1, daughter(1, chiProb))')
 add_aliases('dr0', 'daughter(1, daughter(0, dr))')
 add_aliases('dr1', 'daughter(1, daughter(1, dr))')
-
-
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
