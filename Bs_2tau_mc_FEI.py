@@ -88,7 +88,7 @@ path.add_path(feistate.path)
 rankByHighest('B_s0:generic', 'extraInfo(SignalProbability)', numBest=1, outputVariable='iCand', path=path)
 path.add_module('MCMatcherParticles', listName='B_s0:generic', looseMCMatching=True)
 
-applyCuts('B_s0:generic', 'formula(abs(useCMSFrame(p) - 0.47) < 0.1)', path=path)
+applyCuts('B_s0:generic', 'abs(useCMSFrame(p) - 0.47) < 0.1', path=path)
 applyCuts('B_s0:generic', 'extraInfo(SignalProbability) > 0.0012', path=path)
 
 applyEventCuts('[nParticlesInList(B_s0:generic)!=0]', path=path)
