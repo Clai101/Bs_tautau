@@ -9,7 +9,7 @@ DATA_TYPE=5S_onresonance
 STREAM=1
 
 
-WORkCODE="Bs_my_skim.py" 
+WORkCODE="Bs_2tau_mc_FEI.py" 
 absolute_path="$(pwd)/${WORkCODE}"
 OUTPUT_FILE="mc_gen"
 
