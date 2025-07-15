@@ -98,13 +98,13 @@ fillParticleListFromMC('e+:mc_alle', '', path=path)
 reconstructMCDecay('tau+:mc_1 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '', 1, path=path)
 reconstructMCDecay('tau+:mc_2 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '', 2, path=path)
 
-copyLists('tau+:mc_alle',["tau+:mc_1", "tau+:mc_1"], path=path)
+copyLists('tau+:mc_alle',["tau+:mc_1", "tau+:mc_2"], path=path)
 
 
-reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, ignoreIfTooManyCandidates = False, path=path)
+reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, path=path)
 applyCuts('B_s0:tautau','isSignalAcceptMissing == 1', path=path)
 
-reconstructMCDecay('B_s0:mc -> tau+:mc_alle tau-:mc_alle', '', 1, ignoreIfTooManyCandidates = False, path=path)
+reconstructMCDecay('B_s0:mc -> tau+:mc_alle tau-:mc_alle', '', 1, path=path)
 
 fillParticleListFromMC('B_s0:mc_only', '', path=path)
 
