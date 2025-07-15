@@ -85,7 +85,6 @@ for i, dec in enumerate(tau_dec):
 
 
 copyLists('tau+:alle',[f"tau+:{int(i)}" for i in range(len(tau_dec))], path=path)
-applyCuts('tau+:alle','isSignalAcceptMissing == 1', path=path)
 
 variablesToNtuple('tau+:alle', ['pcm', ], treename='tau', filename=output_file, path=path)
 
