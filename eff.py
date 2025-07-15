@@ -87,6 +87,7 @@ for i, dec in enumerate(tau_dec):
 copyLists('tau+:alle',[f"tau+:{int(i)}" for i in range(len(tau_dec))], path=path)
 applyCuts('tau+:alle','isSignalAcceptMissingNeutrino == 1', path=path)
 
+variablesToNtuple('tau+:alle', ['pcm', ], treename='tau', filename=output_file, path=path)
 
 
 
@@ -100,6 +101,7 @@ reconstructMCDecay('tau+:mc_2 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '
 
 copyLists('tau+:mc_alle',["tau+:mc_1", "tau+:mc_2"], path=path)
 
+variablesToNtuple('tau+:mc_alle', ['pcm', ], treename='tau_mc', filename=output_file, path=path)
 
 reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, path=path)
 applyCuts('B_s0:tautau','isSignalAcceptMissing == 1', path=path)
