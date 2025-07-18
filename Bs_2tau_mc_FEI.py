@@ -245,8 +245,8 @@ for tau_index in [0, 1]:
     __Alias_names.append(alias_name)
 
 add_aliases('ang_taus', 'formula((cmpxt1*cmpxt0 + cmpyt1*cmpyt0 + cmpzt1*cmpzt0)/(cmpt1*cmpt0))')
-add_aliases('ang_tau0_pmiss', 'formula((cmpxmiss*cmpxt0 + cmpxmiss*cmpyt0 + cmpxmiss*cmpzt0)/(cmpmiss*cmpt0))')
-add_aliases('ang_tau1_pmiss', 'formula((cmpxmiss*cmpxt1 + cmpxmiss*cmpyt1 + cmpxmiss*cmpzt1)/(cmpmiss*cmpt1))')
+add_aliases('ang_tau0_pmiss', 'formula((cmpxmiss*cmpxt0 + cmpymiss*cmpyt0 + cmpzmiss*cmpzt0)/(cmpmiss*cmpt0))')
+add_aliases('ang_tau1_pmiss', 'formula((cmpxmiss*cmpxt1 + cmpymiss*cmpyt1 + cmpzmiss*cmpzt1)/(cmpmiss*cmpt1))')
 add_aliases('Delta_tau1_Btag', 'formula(zt1 - zBtag)')
 add_aliases('Delta_tau0_Btag', 'formula(zt0 - zBtag)')
 
