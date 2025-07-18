@@ -160,11 +160,25 @@ def add_aliases(*args, **kwargs):
         raise ValueError("No alias name provided")
     vm.addAlias(*args, **kwargs)
 
+#Sv
+
+for i in [0, 1]:
+    vm.addAlias(f"cmpxt{i}", f"daughter(1, daughter({i}, useCMSFrame(px)))")
+    vm.addAlias(f"cmpyt{i}", f"daughter(1, daughter({i}, useCMSFrame(py)))")
+    vm.addAlias(f"cmpzt{i}", f"daughter(1, daughter({i}, useCMSFrame(pz)))")
+    vm.addAlias(f"cmpt{i}", f"daughter(1, daughter({i}, useCMSFrame(p)))")
+    vm.addAlias(f"zt{i}", f"daughter(1, daughter({i}, z))")
+
+vm.addAlias('cmpxmiss','formula((useCMSFrame(px))')
+vm.addAlias('cmpymiss','formula((useCMSFrame(py))')
+vm.addAlias('cmpzmiss','formula((useCMSFrame(pz))')
+vm.addAlias('zBtag','formula(daughter(0, z))')
 #Beam
 add_aliases('pcm','useCMSFrame(p)')
 add_aliases('ecm','useCMSFrame(E)')
-add_aliases('missedE', 'formula(Ecms - useCMSFrame(E))')
+add_aliases('missedE', 'formula(useCMSFrame(Ecms) - useCMSFrame(E))')
 add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - py)**2 - (beamPz - pz)**2)')
+
 
 #Ups
 add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
@@ -174,17 +188,17 @@ add_aliases('cmthetamiss','formula((useCMSFrame(pz)) / ((useCMSFrame(px))**2 + (
 add_aliases('fox','foxWolframR2')
 add_aliases('asymmetry', '''formula( 
             (
-                daughter(1, daughter(0, useCMSFrame(pz))) - daughter(1, daughter(1, useCMSFrame(pz)))
+                daughter(1, daughter(0, useCMSFrame(E))) - daughter(1, daughter(1, useCMSFrame(E)))
             ) / (
-                daughter(1, daughter(0, useCMSFrame(pz))) + daughter(1, daughter(1, useCMSFrame(pz)))
+                daughter(1, daughter(0, useCMSFrame(E))) + daughter(1, daughter(1, useCMSFrame(E)))
             ) 
             )''')
 
 #Bs_tag
-add_aliases('p0','daughter(0,useCMSFrame(p))')
-add_aliases('theta_Bs','daughter(0,useCMSFrame(cosTheta))')
-add_aliases('M0','daughter(0,M)')
-add_aliases('recM2_Bs', 'formula((beamE - daughter(0,E))**2 - (beamPx - daughter(0,px))**2 - (beamPy - daughter(0,py))**2 - (beamPz - daughter(0,pz))**2)')
+add_aliases('pBtag','daughter(0,useCMSFrame(p))')
+add_aliases('theta_Btag','daughter(0,useCMSFrame(cosTheta))')
+add_aliases('MBtag','daughter(0,M)')
+add_aliases('rec_theta_Btag', 'formula((beamPz - daughter(0,pz)) / ((beamPx - daughter(0,px))**2 + (beamPy - daughter(0,py))**2 + (beamPz - daughter(0,(pz)))**2)**0.5)')
 
 
 add_aliases('idec0', 'daughter(1, daughter(0, extraInfo(decayModeID)))')
@@ -230,6 +244,12 @@ for tau_index in [0, 1]:
     add_aliases(alias_name, daughter_path)
     __Alias_names.append(alias_name)
 
+add_aliases('ang_taus', 'formula((cmpxt1*cmpxt0 + cmpyt1*cmpyt0 + cmpzt1*cmpzt0)/(cmpt1*cmpt0))')
+add_aliases('ang_tau0_pmiss', 'formula((cmpxmiss*cmpxt0 + cmpxmiss*cmpyt0 + cmpxmiss*cmpzt0)/(cmpmiss*cmpt0))')
+add_aliases('ang_tau1_pmiss', 'formula((cmpxmiss*cmpxt1 + cmpxmiss*cmpyt1 + cmpxmiss*cmpzt1)/(cmpmiss*cmpt1))')
+add_aliases('Delta_tau1_Btag', 'formula(zt1 - zBtag)')
+add_aliases('Delta_tau0_Btag', 'formula(zt0 - zBtag)')
+
 for tau_index in [0, 1]: 
     alias_name = f'tau_d_{tau_index}_0'
     daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, M)))'
@@ -256,6 +276,8 @@ add_aliases('Chi_sq_0', 'daughter(1, daughter(0, chiProb))')
 add_aliases('Chi_sq_1', 'daughter(1, daughter(1, chiProb))')
 add_aliases('dr0', 'daughter(1, daughter(0, dr))')
 add_aliases('dr1', 'daughter(1, daughter(1, dr))')
+
+
 
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
