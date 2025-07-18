@@ -169,10 +169,10 @@ for i in [0, 1]:
     vm.addAlias(f"cmpt{i}", f"daughter(1, daughter({i}, useCMSFrame(p)))")
     vm.addAlias(f"zt{i}", f"daughter(1, daughter({i}, z))")
 
-vm.addAlias('cmpxmiss','formula((useCMSFrame(px))')
-vm.addAlias('cmpymiss','formula((useCMSFrame(py))')
-vm.addAlias('cmpzmiss','formula((useCMSFrame(pz))')
-vm.addAlias('zBtag','formula(daughter(0, z))')
+vm.addAlias('cmpxmiss','(useCMSFrame(px)')
+vm.addAlias('cmpymiss','(useCMSFrame(py)')
+vm.addAlias('cmpzmiss','(useCMSFrame(pz)')
+vm.addAlias('zBtag','daughter(0, z)')
 #Beam
 add_aliases('pcm','useCMSFrame(p)')
 add_aliases('ecm','useCMSFrame(E)')
