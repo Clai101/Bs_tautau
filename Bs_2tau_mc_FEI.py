@@ -182,7 +182,7 @@ add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - 
 
 #Ups
 add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
-add_aliases('cmpmiss','formula(((useCMSFrame(px))**2 + (useCMSFrame(py))**2 + (useCMSFrame(pz))**2)**0.5)')
+add_aliases('cmpmiss','useCMSFrame(p)')
 add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
 add_aliases('cmthetamiss','formula((useCMSFrame(pz)) / ((useCMSFrame(px))**2 + (useCMSFrame(py))**2 + (useCMSFrame(pz))**2)**0.5)')
 add_aliases('fox','foxWolframR2')
