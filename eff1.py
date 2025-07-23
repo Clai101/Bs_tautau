@@ -277,10 +277,6 @@ add_aliases('Chi_sq_1', 'daughter(1, daughter(1, chiProb))')
 add_aliases('dr0', 'daughter(1, daughter(0, dr))')
 add_aliases('dr1', 'daughter(1, daughter(1, dr))')
 
-fillParticleListFromMC('B_s0:mc_only', '', path=path)
-variablesToNtuple('B_s0:mc_only', ['pcm', ], treename='MC', filename=output_file, path=path)
-
-
 variablesToNtuple('Upsilon(5S):alle', __Alias_names + ['totalEnergyMC', 'E_gamma_in_ROE'], treename='Y5S', filename=output_file, path=path)
 
 #Process 1000 events

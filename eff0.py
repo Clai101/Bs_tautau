@@ -68,52 +68,8 @@ setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
 
 #FSP
-fillParticleList('e+:alle','abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path = path)
-fillParticleList('mu+:alle','abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
-
-applyCuts('mu+:alle','isSignal == 1', path=path)
-applyCuts('e+:alle','isSignal == 1', path=path)
-
-#reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
-#copyLists('rho+:alle',['rho+:1', ], path=path)
-
-#tau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
-tau_dec = ["e+:alle", "mu+:alle"]
-
-for i, dec in enumerate(tau_dec):
-    reconstructDecay(f'tau+:{int(i)} -> {dec}', '', int(i), path=path)
-
-
-copyLists('tau+:alle',[f"tau+:{int(i)}" for i in range(len(tau_dec))], path=path)
-
-variablesToNtuple('tau+:alle', ['pcm', ], treename='tau', filename=output_file, path=path)
-
-
-
-
-reconstructMCDecay('tau+:mc_1 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '', 1, path=path)
-reconstructMCDecay('tau+:mc_2 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '', 2, path=path)
-
-copyLists('tau+:mc_alle',["tau+:mc_1", "tau+:mc_2"], path=path)
-
-variablesToNtuple('tau+:mc_alle', ['pcm', ], treename='tau_mc', filename=output_file, path=path)
-
-reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, path=path)
-applyCuts('B_s0:tautau','isSignalAcceptMissing == 1', path=path)
-
-
 fillParticleListFromMC('B_s0:mc_only', '', path=path)
-
-from variables import variables as vm
-
-vm.addAlias('pcm','useCMSFrame(p)')
-vm.addAlias('cos_Theta_Lc','useCMSFrame(cosTheta)')
-
-
-
-# Ntuples
-variablesToNtuple('B_s0:tautau', ['pcm', ], treename='BS', filename=output_file, path=path)
-variablesToNtuple('B_s0:mc_only', ['pcm', ], treename='Lc_MC_only', filename=output_file, path=path)
+variablesToNtuple('B_s0:mc_only', ['pcm', ], treename='MC', filename=output_file, path=path)
 
 
 
