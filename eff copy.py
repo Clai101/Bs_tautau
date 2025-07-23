@@ -90,11 +90,7 @@ variablesToNtuple('tau+:alle', ['pcm', ], treename='tau', filename=output_file, 
 
 
 
-fillParticleListFromMC('nu_e:mc_alle', '', path=path)
-fillParticleListFromMC('nu_mu:mc_alle', '', path=path)
-fillParticleListFromMC('nu_tau:mc_alle', '', path=path)
-fillParticleListFromMC('mu+:mc_alle', '', path=path)
-fillParticleListFromMC('e+:mc_alle', '', path=path)
+
 reconstructMCDecay('tau+:mc_1 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '', 1, path=path)
 reconstructMCDecay('tau+:mc_2 -> e+:mc_alle nu_e:mc_alle anti-nu_tau:mc_alle', '', 2, path=path)
 
@@ -105,7 +101,6 @@ variablesToNtuple('tau+:mc_alle', ['pcm', ], treename='tau_mc', filename=output_
 reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, path=path)
 applyCuts('B_s0:tautau','isSignalAcceptMissing == 1', path=path)
 
-reconstructMCDecay('B_s0:mc -> tau+:mc_alle tau-:mc_alle', '', 1, path=path)
 
 fillParticleListFromMC('B_s0:mc_only', '', path=path)
 
@@ -118,7 +113,6 @@ vm.addAlias('cos_Theta_Lc','useCMSFrame(cosTheta)')
 
 # Ntuples
 variablesToNtuple('B_s0:tautau', ['pcm', ], treename='BS', filename=output_file, path=path)
-variablesToNtuple('B_s0:mc', ['pcm', ], treename='BS_MC', filename=output_file, path=path)
 variablesToNtuple('B_s0:mc_only', ['pcm', ], treename='Lc_MC_only', filename=output_file, path=path)
 
 

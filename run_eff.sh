@@ -9,7 +9,7 @@ do
   filename=$(basename "$file")
   name_no_ext="${filename%.mdst}"
 
-  WORKDIR=/gpfs/home/belle2/matrk/Extend/leptonic_gen/mc_${name_no_ext}
+  WORKDIR=/gpfs/home/belle2/matrk/Extend/eff/mc_${name_no_ext}
 
   rm -rf ${WORKDIR}
   mkdir -p ${WORKDIR}
