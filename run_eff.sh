@@ -14,10 +14,12 @@ do
   rm -rf ${WORKDIR}
   mkdir -p ${WORKDIR}
 
-  cp eff.py ${WORKDIR}
+  cp eff0.py ${WORKDIR}
+  cp eff1.py ${WORKDIR}
 
   cd ${WORKDIR}
-  echo "basf2 -l error eff.py \"${file}\" mc.root Sig_mc &> mc.log" > job_script
+  echo "basf2 -l error eff0.py \"${file}\" mc0.root Sig_mc &> mc0.log" > job_script
+  echo "basf2 -l error eff1.py \"${file}\" mc1.root Sig_mc &> mc1.log" > job_script
   chmod 755 job_script
   bsub -q s ./job_script
 
