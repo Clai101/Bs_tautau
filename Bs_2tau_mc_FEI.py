@@ -131,12 +131,10 @@ path.add_module('MCMatcherParticles', listName='tau+:alle', looseMCMatching=True
 
 vertex.kFit('tau+:alle', conf_level = -1, fit_type='vertex', daughtersUpdate=False, constraint = 'iptube', path=path)
 
-reconstructDecay('B_s0:tautau_plusFirst -> tau+:alle tau-:alle',
-                 1, path=path)
+reconstructDecay('B_s0:tautau_plusFirst -> tau+:alle tau-:alle', '',1, path=path)
 
 # Второе направление (tau- first)
-reconstructDecay('B_s0:tautau_minusFirst -> tau-:alle tau+:alle',
-                 1, path=path)
+reconstructDecay('B_s0:tautau_minusFirst -> tau-:alle tau+:alle', '',1, path=path)
 
 
 reconstructDecay('Upsilon(5S):alle0 -> B_s0:alle B_s0:tautau_minusFirst', 'Dt0_p_in_tagcm > Dt1_p_in_tagcm', 1, path=path)
