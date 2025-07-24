@@ -131,17 +131,22 @@ path.add_module('MCMatcherParticles', listName='tau+:alle', looseMCMatching=True
 
 vertex.kFit('tau+:alle', conf_level = -1, fit_type='vertex', daughtersUpdate=False, constraint = 'iptube', path=path)
 
-reconstructDecay('B_s0:tautau -> tau+:alle tau-:alle', '', 1, ignoreIfTooManyCandidates = False, path=path)
-reconstructDecay('B_s0:tau -> tau+:alle', '', 2, ignoreIfTooManyCandidates = False, allowChargeViolation = True, path=path)
-copyLists('B_s0:tauonic',['B_s0:tautau', 'B_s0:tau'], path=path)
+reconstructDecay('B_s0:tautau_plusFirst -> tau+:alle tau-:alle',
+                 1, path=path)
 
-reconstructDecay('Upsilon(5S):alle0 -> B_s0:alle B_s0:tauonic', '', 1, path=path)
-reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tauonic', '', 2, path=path)
-copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1'], path=path)
+# Второе направление (tau- first)
+reconstructDecay('B_s0:tautau_minusFirst -> tau-:alle tau+:alle',
+                 1, path=path)
+
+
+reconstructDecay('Upsilon(5S):alle0 -> B_s0:alle B_s0:tautau_minusFirst', 'Dt0_p_in_tagcm > Dt1_p_in_tagcm', 1, path=path)
+reconstructDecay('Upsilon(5S):alle1 -> B_s0:alle anti-B_s0:tautau_minusFirst', 'Dt0_p_in_tagcm > Dt1_p_in_tagcm', 2, path=path)
+reconstructDecay('Upsilon(5S):alle2 -> B_s0:alle B_s0:tautau_plusFirst', 'Dt0_p_in_tagcm > Dt1_p_in_tagcm', 3, path=path)
+reconstructDecay('Upsilon(5S):alle3 -> B_s0:alle anti-B_s0:tautau_plusFirst', 'Dt0_p_in_tagcm > Dt1_p_in_tagcm', 4, path=path)
+copyLists('Upsilon(5S):alle',['Upsilon(5S):alle0', 'Upsilon(5S):alle1', 'Upsilon(5S):alle2', 'Upsilon(5S):alle3'], path=path)
 
 applyCuts('Upsilon(5S):alle', 'N_tracks_in_ROE == 0', path=path)
 applyCuts('Upsilon(5S):alle', 'E_gamma_in_ROE < 1.2', path=path)
-buildEventShape(path=path)
 
 #applyEventCuts('[formula(nParticlesInList(Upsilon(5S):alle)) == 1]', path=path)
 
@@ -181,11 +186,20 @@ add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - 
 
 
 #Ups
-add_aliases('pmiss','formula(((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
 add_aliases('cmpmiss','useCMSFrame(p)')
-add_aliases('thetamiss','formula((beamPz - pz) / ((beamPx - px)**2 + (beamPy - py)**2 + (beamPz - pz)**2)**0.5)')
+add_aliases('cmpmiss_ROE','formula(((cmpx_gamma_in_ROE-useCMSFrame(px))**2 + (cmpy_gamma_in_ROE-useCMSFrame(py))**2 + (cmpz_gamma_in_ROE-useCMSFrame(pz))**2)**0.5)')
 add_aliases('cmthetamiss','formula((useCMSFrame(pz)) / ((useCMSFrame(px))**2 + (useCMSFrame(py))**2 + (useCMSFrame(pz))**2)**0.5)')
-add_aliases('fox','foxWolframR2')
+add_aliases('cmthetamiss_ROE',
+    'formula((cmpz_gamma_in_ROE - useCMSFrame(pz)) / \
+              (((cmpx_gamma_in_ROE - useCMSFrame(px))**2 + \
+                (cmpy_gamma_in_ROE - useCMSFrame(py))**2 + \
+                (cmpz_gamma_in_ROE - useCMSFrame(pz))**2)**0.5))')
+
+buildEventShape(inputListNames = "Upsilon(5S):alle",path=path)
+add_aliases('fox_ups','foxWolframR2')
+
+buildEventShape(inputListNames = "B_s0:alle",path=path)
+add_aliases('fox_Btag','foxWolframR2')
 add_aliases('asymmetry', '''formula( 
             (
                 daughter(1, daughter(0, useCMSFrame(E))) - daughter(1, daughter(1, useCMSFrame(E)))
@@ -193,6 +207,9 @@ add_aliases('asymmetry', '''formula(
                 daughter(1, daughter(0, useCMSFrame(E))) + daughter(1, daughter(1, useCMSFrame(E)))
             ) 
             )''')
+
+
+
 
 #Bs_tag
 add_aliases('pBtag','daughter(0,useCMSFrame(p))')
@@ -237,16 +254,19 @@ for tau_index in [0, 1]:
     alias_name = f'theta_tau_{tau_index}'
     daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(cosTheta)))'
     add_aliases(alias_name, daughter_path)
-    __Alias_names.append(alias_name)
     
     alias_name = f'p_tau_{tau_index}'
     daughter_path = f'daughter(1, daughter({tau_index}, useCMSFrame(p)))'
     add_aliases(alias_name, daughter_path)
-    __Alias_names.append(alias_name)
+add_aliases(f"p_tau_0_tagcm", "Dt0_p_in_tagcm")
+add_aliases(f"p_tau_1_tagcm", "Dt1_p_in_tagcm")
 
 add_aliases('ang_taus', 'formula((cmpxt1*cmpxt0 + cmpyt1*cmpyt0 + cmpzt1*cmpzt0)/(cmpt1*cmpt0))')
+add_aliases('ang_taus_tagcm', 'Dt_angle_in_tagcm')
 add_aliases('ang_tau0_pmiss', 'formula((cmpxmiss*cmpxt0 + cmpymiss*cmpyt0 + cmpzmiss*cmpzt0)/(cmpmiss*cmpt0))')
 add_aliases('ang_tau1_pmiss', 'formula((cmpxmiss*cmpxt1 + cmpymiss*cmpyt1 + cmpzmiss*cmpzt1)/(cmpmiss*cmpt1))')
+add_aliases('ang_tau1_ROE', 'formula((cmpx_gamma_in_ROE*cmpxt1 + cmpy_gamma_in_ROE*cmpyt1 + cmpz_gamma_in_ROE*cmpzt1)/(cmp_gamma_in_ROE*cmpt1))')
+add_aliases('ang_tau0_ROE', 'formula((cmpx_gamma_in_ROE*cmpxt0 + cmpy_gamma_in_ROE*cmpyt0 + cmpz_gamma_in_ROE*cmpzt0)/(cmp_gamma_in_ROE*cmpt0))')
 add_aliases('Delta_tau1_Btag', 'formula(zt1 - zBtag)')
 add_aliases('Delta_tau0_Btag', 'formula(zt0 - zBtag)')
 
@@ -254,20 +274,16 @@ for tau_index in [0, 1]:
     alias_name = f'tau_d_{tau_index}_0'
     daughter_path = f'daughter(1, daughter({tau_index}, daughter(0, M)))'
     add_aliases(alias_name, daughter_path)
-    __Alias_names.append(alias_name)
 
 for tau_index in [0, 1]:
     add_aliases(f'tau_last_z_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dz)))')
     add_aliases(f'tau_last_r_{tau_index}', f'daughter(1, daughter({tau_index}, daughter(0, dr)))')
-    __Alias_names.append(f'tau_last_z_{tau_index}')
-    __Alias_names.append(f'tau_last_r_{tau_index}')
 
 for tau_ind in [0, 1]:
     for hypo1 in [0, 1, 2, 4]:  
         for hypo2 in [0, 1, 2, 4]:  
             expr = f'daughter(1, daughter({tau_ind}, daughter(0, atcPIDBelle({hypo1}, {hypo2}))))'
             alias_name = f'PID_{hypo1}_vs_{hypo2}_tau{tau_ind}'
-            __Alias_names.append(alias_name)
             add_aliases(alias_name, expr)
 
 add_aliases('Istau0', 'daughter(1, daughter(0, daughter(0, isSignal)))')
@@ -286,3 +302,6 @@ print(path)
 #b2.process(path, max_event=100000)
 b2.process(path)
 print(b2.statistics)
+
+
+
