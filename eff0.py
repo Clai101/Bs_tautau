@@ -69,7 +69,7 @@ setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
 #FSP
 fillParticleListFromMC('B_s0:mc_only', '', path=path)
-variablesToNtuple('B_s0:mc_only', ['pcm', ], treename='MC', filename=output_file, path=path)
+variablesToNtuple('B_s0:mc_only', ['p', ], treename='MC', filename=output_file, path=path)
 
 
 
