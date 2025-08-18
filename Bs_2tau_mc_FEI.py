@@ -65,10 +65,6 @@ os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
-path.add_module('EnableMyVariable')
-path.add_module('EnableMyMetaVariable')   # ← это критично для REGISTER_METAVARIABLE
-path.add_module('SkimFiles')
-
 #Fei
 
 print(skim_id)
