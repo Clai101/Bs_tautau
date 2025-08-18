@@ -19,7 +19,7 @@ import vertex
 import fei
 from ROOT import Belle2
 
-
+path.add_module('EnableMyMetaVariable')
 
 Lamc_m = 2.28646
 Lamc_25_m = 2.5925
