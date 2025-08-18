@@ -19,7 +19,6 @@ import vertex
 import fei
 from ROOT import Belle2
 
-path.add_module('EnableMyMetaVariable')
 
 Lamc_m = 2.28646
 Lamc_25_m = 2.5925
@@ -66,6 +65,9 @@ os.environ['PGUSER'] = 'g0db'
 b2biiConversion.convertBelleMdstToBelleIIMdst(input_file, path=path)
 setAnalysisConfigParams({'mcMatchingVersion': 'Belle'}, path)
 
+path.add_module('EnableMyVariable')
+path.add_module('EnableMyMetaVariable')   # ← это критично для REGISTER_METAVARIABLE
+path.add_module('SkimFiles')
 
 #Fei
 
