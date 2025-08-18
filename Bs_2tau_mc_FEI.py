@@ -193,11 +193,26 @@ add_aliases('cmthetamiss_ROE',
                 (cmpy_gamma_in_ROE - useCMSFrame(py))**2 + \
                 (cmpz_gamma_in_ROE - useCMSFrame(pz))**2)**0.5))')
 
-buildEventShape(inputListNames = "Upsilon(5S):alle",path=path)
+
+trackCuts = 'pt > 0.1'
+trackCuts += ' and thetaInCDCAcceptance'
+trackCuts += ' and abs(dz) < 3.0'
+trackCuts += ' and dr < 0.5'
+trackCuts += ' and InROE(Upsilon(5S):alle, 0) != 0'
+
+gammaCuts = 'E > 0.05'
+gammaCuts += ' and thetaInCDCAcceptance'
+gammaCuts += ' and InROE(Upsilon(5S):alle, 0) != 0'
+
+buildEventShape(custom_cuts = (trackCuts, gammaCuts),path=path)
 add_aliases('fox_ups','foxWolframR2')
 
-buildEventShape(inputListNames = "B_s0:alle",path=path)
+trackCuts += ' and InROE(B_s0:alle, 0) != 0'
+gammaCuts += ' and InROE(B_s0:alle, 0) != 0'
+
+buildEventShape(custom_cuts = (trackCuts, gammaCuts),path=path)
 add_aliases('fox_Btag','foxWolframR2')
+
 add_aliases('asymmetry', '''formula( 
             (
                 daughter(1, daughter(0, useCMSFrame(E))) - daughter(1, daughter(1, useCMSFrame(E)))
@@ -205,8 +220,6 @@ add_aliases('asymmetry', '''formula(
                 daughter(1, daughter(0, useCMSFrame(E))) + daughter(1, daughter(1, useCMSFrame(E)))
             ) 
             )''')
-
-
 
 
 #Bs_tag
