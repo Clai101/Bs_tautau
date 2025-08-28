@@ -115,11 +115,11 @@ fillParticleList('e+:alle','abs(dz) < 2 and dr < 0.5 and eIDBelle > 0.9', path =
 fillParticleList('mu+:alle','abs(dz) < 2 and dr < 0.5 and muIDBelle > 0.9', path=path)
 
 
-#reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
-#copyLists('rho+:alle',['rho+:1', ], path=path)
+reconstructDecay('rho+:1 -> pi+:alle pi0:alle', f'0.52 < InvM and InvM < 1.06', 1, path=path)
+copyLists('rho+:alle',['rho+:1', ], path=path)
 
 #tau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle", "pi+:alle pi+:alle pi-:alle", "pi+:alle gamma:alle"]
-tau_dec = ["e+:alle", "mu+:alle"]
+tau_dec = ["e+:alle", "mu+:alle", "pi+:alle", "rho+:alle",]
 
 for i, dec in enumerate(tau_dec):
     reconstructDecay(f'tau+:{int(i)} -> {dec}', '', int(i), path=path)
@@ -183,13 +183,7 @@ add_aliases('recM2_Ups', 'formula((beamE - E)**2 - (beamPx - px)**2 - (beamPy - 
 
 #Ups
 add_aliases('cmpmiss','useCMSFrame(p)')
-add_aliases('cmpmiss_ROE','formula(((cmpx_gamma_in_ROE-useCMSFrame(px))**2 + (cmpy_gamma_in_ROE-useCMSFrame(py))**2 + (cmpz_gamma_in_ROE-useCMSFrame(pz))**2)**0.5)')
 add_aliases('cmthetamiss','formula((useCMSFrame(pz)) / ((useCMSFrame(px))**2 + (useCMSFrame(py))**2 + (useCMSFrame(pz))**2)**0.5)')
-add_aliases('cmthetamiss_ROE',
-    'formula((cmpz_gamma_in_ROE - useCMSFrame(pz)) / \
-              (((cmpx_gamma_in_ROE - useCMSFrame(px))**2 + \
-                (cmpy_gamma_in_ROE - useCMSFrame(py))**2 + \
-                (cmpz_gamma_in_ROE - useCMSFrame(pz))**2)**0.5))')
 
 
 trackCuts = 'pt > 0.1'
@@ -205,11 +199,6 @@ gammaCuts += ' and InROE(Upsilon(5S):alle, 0) != 0'
 buildEventShape(custom_cuts = (trackCuts, gammaCuts),path=path)
 add_aliases('fox_ups','foxWolframR2')
 
-trackCuts += ' and InROE(B_s0:alle, 0) != 0'
-gammaCuts += ' and InROE(B_s0:alle, 0) != 0'
-
-buildEventShape(custom_cuts = (trackCuts, gammaCuts),path=path)
-add_aliases('fox_Btag','foxWolframR2')
 
 add_aliases('asymmetry', '''formula( 
             (
@@ -276,8 +265,6 @@ add_aliases('ang_tau0_pmiss', 'formula((cmpxmiss*cmpxt0 + cmpymiss*cmpyt0 + cmpz
 add_aliases('ang_tau1_pmiss', 'formula((cmpxmiss*cmpxt1 + cmpymiss*cmpyt1 + cmpzmiss*cmpzt1)/(cmpmiss*cmpt1))')
 add_aliases('ang_tau1_ROE', 'formula((cmpx_gamma_in_ROE*cmpxt1 + cmpy_gamma_in_ROE*cmpyt1 + cmpz_gamma_in_ROE*cmpzt1)/(cmp_gamma_in_ROE*cmpt1))')
 add_aliases('ang_tau0_ROE', 'formula((cmpx_gamma_in_ROE*cmpxt0 + cmpy_gamma_in_ROE*cmpyt0 + cmpz_gamma_in_ROE*cmpzt0)/(cmp_gamma_in_ROE*cmpt0))')
-add_aliases('Delta_tau1_Btag', 'formula(zt1 - zBtag)')
-add_aliases('Delta_tau0_Btag', 'formula(zt0 - zBtag)')
 
 for tau_index in [0, 1]: 
     alias_name = f'tau_d_{tau_index}_0'
@@ -297,10 +284,6 @@ for tau_ind in [0, 1]:
 
 add_aliases('Istau0', 'daughter(1, daughter(0, daughter(0, isSignal)))')
 add_aliases('Istau1', 'daughter(1, daughter(1, daughter(0, isSignal)))')
-add_aliases('Chi_sq_0', 'daughter(1, daughter(0, chiProb))')
-add_aliases('Chi_sq_1', 'daughter(1, daughter(1, chiProb))')
-add_aliases('dr0', 'daughter(1, daughter(0, dr))')
-add_aliases('dr1', 'daughter(1, daughter(1, dr))')
 
 
 
